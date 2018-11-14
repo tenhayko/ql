@@ -39,7 +39,7 @@ echo '
                         <i class="fa fa-user"></i>
                         <span class="caret"></span></button>
                         <ul class="dropdown-menu">
-                          <li><a href="#" data-toggle="modal" data-target="#myModal">Đổi mật khẩu</a></li>
+                          <li><a href="#" data-toggle="modal" data-target="#myModalUser">Đổi mật khẩu</a></li>
                           <li><a href="'.$portalurl.'/admin.php?op=logout">Thoát</a></li>
                         </ul>
                       </div>
@@ -79,7 +79,7 @@ echo '
 </style>
 
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
+<div id="myModalUser" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->
