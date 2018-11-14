@@ -191,6 +191,18 @@
         }
         $(".advance-search").slideToggle();
     });
+    function get_xa(id){
+        var xa = 0;
+        $.ajax({
+            type: "POST",
+            url: 'admin.php?op=Check_xa_lehoi',
+            data: "id="+id+"&xa="+xa,
+            success: function (ketqua2) {
+                $("#statediv").html(ketqua2);
+            }
+        });
+    }
+
 </script>
 
 
