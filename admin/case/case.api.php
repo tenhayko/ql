@@ -18,25 +18,9 @@ if (!defined('ADMIN_FILE')) {
 
 switch($op) {
 
-    case "phan_quyen":
-	
-	case "modify_phanquyen":
-	case "delete_phanquyen":
-	case "delete_moquyen":
-	
-	case "delete_chaquyen":
-	
-	
-	
-    case "mod_authors":
-    case "modifyadmin":
-    case "UpdateAuthor":
-    case "AddAuthor":
-	case "DeleteAuthor":
-	case "Search_User":
-	case "Change_Password_User":
+    case "Change_Password_User":
 
-    include("admin/modules/authors.php");
+    include("admin/modules/api.php");
     break;
 
 }
