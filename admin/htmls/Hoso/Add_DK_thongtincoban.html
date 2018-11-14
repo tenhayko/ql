@@ -1,0 +1,264 @@
+<!-- BEGIN: MAIN -->
+
+
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper"
+     xmlns="http://www.w3.org/1999/html">
+    <div class=" col_right">
+        <div class="url_top">
+            <a href="{portalurl}/admin"><strong>Trang chủ</strong> <img src="{portalurl}/images/caret-r.gif"
+                                                                        border="0"/></a><strong>Thông tin cơ bản</strong>
+
+            <div style="float:right; padding-top:1px;"><img src="{portalurl}/images/arrow_left.gif" border="0"/><a
+                    href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
+        </div>
+        <div style=" margin-top: 10px" class=" col-xs-12">
+            <div>
+                <center>
+                    <h4 style="font-weight: bold">THÔNG TIN CƠ BẢN<h4>
+                </center>
+            </div>
+            <div class="col-xs-9" style="padding-left:5px; width:72%">
+                <form action="" name="form1" id="form1" method="post" enctype="multipart/form-data"
+                      class="form-horizontal"
+                      role="form">
+                    <input type="hidden" value="{pid}" name="pid">
+                    <input type="hidden" value="{mid}" name="mid">
+                    <input type="hidden" value="{ccid}" name="ccid">
+
+                    <div>
+                        <!--<fieldset class="scheduler-border">-->
+
+                        <table width="47%" class="table">
+                            <tr>
+                                <td><b>Thuộc phòng ban</b>:</td>
+                                <td>
+                                
+                                <select class="input_text" name="id_phongban" style="width: 80%" onChange="getState(this.value)">
+                                        <option>Lựa chọn</option>
+
+                                        <!-- BEGIN: chi_nhanh -->
+                                        <option value="{row.id}" {select}>{row.name_congty}</option>
+                                        <!-- END: chi_nhanh -->
+                                    </select>
+                                    
+                                    
+                                    
+                                </td>
+                                <td><b>Bộ phận</b>:</td>
+                                <td>
+                                <div id="statediv">
+                                        <select name="id_bophan" style="width: 78%" class="input_text">
+                                            {phong_select}
+                                        </select>
+                                    </div>
+                                
+                                
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+                                <td width="20%"><b>Ngày vào làm việc</b>:</td>
+                                <td width="20%">
+                                    <input type="text" class="w100" name="date_work" value="{date_work}" id="date_lv"
+                                           style="width: 60%;float: left">
+                                    <a href="javascript:void(0)" style="display: block; width: 10%; float: left"
+                                       onclick="if(self.gfPop)gfPop.fPopCalendar(document.form1.date_lv);return false;"
+                                       HIDEFOCUS><img name="popcal" align="absmiddle"
+                                                      src="{portalurl}/images/admin/calbtn.gif"
+                                                      width="34" height="22" border="0" alt=""></a>
+                                </td>
+                                <td width="13%"><b>Tham gia đảng viên</b>:</td>
+                                <td width="20%">
+                                    <input type="radio" id="" name="dangvien" value="1" {checked1}> <label> Có<label>
+                                    <input style="margin-left: 20px" type="radio" name="dangvien" value="0" {checked2}> <label> Không</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="13%"><b>Số hợp đồng</b>:</td>
+                                <td width="20%">
+                                    <input type="text" value="{sohd}" name="sohd" class="w100">
+                                </td>
+                                <td width="20%"><b>Ngày ký hợp đồng</b>:</td>
+                                <td width="20%">
+                                    <input type="text" class="w100" name="date_ky" value="{date_ky}" id="date_ky"
+                                           style="width: 60%;float: left">
+                                    <a href="javascript:void(0)" style="display: block; width: 10%; float: left"
+                                       onclick="if(self.gfPop)gfPop.fPopCalendar(document.form1.date_ky);return false;"
+                                       HIDEFOCUS><img name="popcal" align="absmiddle"
+                                                      src="{portalurl}/images/admin/calbtn.gif"
+                                                      width="34" height="22" border="0" alt=""></a>
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td width="20%"><b>Ngày hết hạn hợp đồng</b>:</td>
+                                <td width="20%">
+                                    <input type="text" class="w100" name="date_kt" value="{date_kt}" id="date_hanhd"
+                                           style="width: 60%;float: left">
+                                    <a href="javascript:void(0)" style="display: block; width: 10%; float: left"
+                                       onclick="if(self.gfPop)gfPop.fPopCalendar(document.form1.date_hanhd);return false;"
+                                       HIDEFOCUS><img name="popcal" align="absmiddle"
+                                                      src="{portalurl}/images/admin/calbtn.gif"
+                                                      width="34" height="22" border="0" alt=""></a>
+                                </td>
+                                <td width="13%"><b>Mã số thuế cá nhân</b>:</td>
+                                <td width="20%">
+                                    <input type="text" value="{code_thue}" name="code_thue" class="w100">
+                                </td>
+
+                            </tr>
+
+
+
+                            <tr>
+                                <td><b>Số bảo hiểm xã hội</b>:</td>
+                                <td>
+                                    <input type="text" value="{sobh}" name="sobh" class="w100">
+                                </td>
+                                <td><b>Tham gia bảo hiểm xã hội</b>:</td>
+                                <td width="20%">
+                                    <input type="radio" id="thamgia_co" name="bhxh" value="1" {checked11}> <label for="thamgia_co"> Có<label>
+                                    <input style="margin-left: 20px" id="thamgia_khong" type="radio" name="bhxh" {checked22} value="0"> <label for="thamgia_khong"> Không</label>
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td width="20%"><b>Tham gia BHXH</b>:</td>
+                                <td width="20%">
+                                    <input type="text" class="w100" name="date_bhxh" value="{date_bhxh}" id="date_tg"
+                                           style="width: 60%;float: left">
+                                    <a href="javascript:void(0)" style="display: block; width: 10%; float: left"
+                                       onclick="if(self.gfPop)gfPop.fPopCalendar(document.form1.date_tg);return false;"
+                                       HIDEFOCUS><img name="popcal" align="absmiddle"
+                                                      src="{portalurl}/images/admin/calbtn.gif"
+                                                      width="34" height="22" border="0" alt=""></a>
+                                </td>
+
+                                <td width="20%"><b>Email</b>:</td>
+                                <td width="20%">
+                                    <input type="text" {disabled} placeholder="Nhập thông tin email" value="{email}" name="email" class="w100">
+                                </td>
+
+
+                            </tr>
+                            <tr>
+
+                                <td width="20%"><b>Thông tin đăng nhập</b>:</td>
+                                <td colspan="2" width="">
+                                    <input type="text" {disabled} placeholder="Nhập tên đăng nhập"  class="w100" name="aid" value="{aid}" style="width: 45%">
+                                    <input type="text" {disabled} placeholder="Nhập password" value="{pass}" name="pass" class="w100" style="width: 45%; margin-left: 10px">
+                                </td>
+                                <td></td>
+
+                            </tr>
+
+
+                        </table>
+
+                        <center style="margin-top: 10px; margin-bottom: 15px;"><input name="Dk_thongtincoban" type="submit"
+                                                                                      onClick="return ValidateForm()"
+                                                                                      class="btn btn-sm btn-primary"
+                                                                                      value="Hoàn thành"/> <input
+                                name=""
+                                type="reset"
+                                class="btn btn-sm btn-primary"
+                                value="Nhập lại"/>
+                        </center>
+
+
+                        <!--</fieldset>-->
+
+                    </div>
+
+
+                </form>
+            </div>
+            <!--_________________________________________-->
+
+
+            <div class="col-xs-3">
+
+                <div class="note">
+                    <ul>
+                        {Fun_menu}
+                    </ul>
+                </div>
+
+
+                <div class="clear"></div>
+
+            </div>
+            <div class="clear"></div>
+            <!--_________________________________________-->
+
+        </div>
+    </div>
+
+    <div class="clear"></div>
+</div>
+
+</div>
+<iframe width=199 height=178 name="gToday:normal:agenda.js" id="gToday:normal:agenda.js"
+        src="{portalurl}/WeekPicker/ipopeng.htm" scrolling="no" frameborder="0"
+        style="visibility:visible; z-index:999; position:absolute; top:-500px; left:-500px;">
+    <iframe width=188 height=26 name="gToday:datetime:agenda.js:gfPop5:plugins_time.js"
+            id="gToday:datetime:agenda.js:gfPop5:plugins_time.js" src="{portalurl}/WeekPicker/datetime_ipopeng.htm"
+            scrolling="no" frameborder="0"
+            style="visibility:visible; z-index:999; position:absolute; left:-500px; top:0px;">picker4
+    </iframe>
+</iframe>
+
+
+<script language="javascript" type="text/javascript">
+
+    function getXMLHTTP() { //fuction to return the xml http object
+        var xmlhttp = false;
+        try {
+            xmlhttp = new XMLHttpRequest();
+        }
+        catch (e) {
+            try {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            catch (e) {
+                try {
+                    xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+                }
+                catch (e1) {
+                    xmlhttp = false;
+                }
+            }
+        }
+
+        return xmlhttp;
+    }
+
+    function getState(countryId) {
+
+        var strURL = "{portalurl}/admin.php?op=Bophan_check&country=" + countryId;
+        var req = getXMLHTTP();
+
+        if (req) {
+
+            req.onreadystatechange = function () {
+                if (req.readyState == 4) {
+                    // only if "OK"
+                    if (req.status == 200) {
+                        document.getElementById('statediv').innerHTML = req.responseText;
+                    } else {
+                        alert("There was a problem while using XMLHTTP:\n" + req.statusText);
+                    }
+                }
+            }
+            req.open("GET", strURL, true);
+            req.send(null);
+        }
+    }
+    function getCity(countryId, stateId) {
+    }
+</script>
+<!-- END: MAIN -->

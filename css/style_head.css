@@ -1,0 +1,83 @@
+
+
+
+/*====================================*/
+
+
+
+#zone-bar1 {
+	
+	min-height:20px;
+	
+	}
+	#zone-bar1 ul {
+		display: block;
+		}
+		#zone-bar1 ul li {
+			height: 18px;
+			
+			list-style:none;
+			float: left;
+			margin-right: 20px;
+			}
+			#zone-bar1 ul li:hover {
+				background: url(images/zonebar-navleft.png) center left no-repeat;
+			}
+			#zone-bar1 ul li a {
+				display: block;
+				float: left;
+				height: 23px;
+				position: relative;
+				top: -20px;
+				
+				padding-right: 3px;
+				color: #383838;
+				font-weight: bold;
+				font-size:12px;
+				text-decoration: none;
+				
+				}
+				#zone-bar1 ul li a:hover {
+					background: url(images/zonebar-navright.png) center right no-repeat;
+				}
+				#zone-bar1 ul li a span {
+					position: relative;
+					top: 6px;
+				}
+			#zone-bar1 ul li ul {
+				display: none;
+				position: absolute;
+				top:35px;
+				
+				width:300px;
+				border-left: 1px solid #ccc;
+				border-bottom: 1px solid #ccc;
+				border-right: 1px solid #ccc;
+				background: white;
+				padding: 28px 0 0 0;
+				z-index:100;
+				box-shadow:2px 2px 2px #ccc;
+				
+				border-bottom-left-radius: 15px;
+   				 border-bottom-right-radius: 15px;
+				
+				}
+				#zone-bar1 ul li ul li {
+					float: none;
+					padding: 0; margin: 0;
+					height: 100%;
+				}
+				#zone-bar1 ul li ul li:hover {
+					background: none;
+					}
+					#zone-bar1 ul li ul li a {
+						display: block;
+						float: none;
+						border-bottom:1px dotted #ccc;
+						padding: 9px 0 0 6px;
+						width: 290px;
+					}
+					#zone-bar1 ul li ul li a:hover {
+						background: #BC0000;
+						color:#fff;
+					}

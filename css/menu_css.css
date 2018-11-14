@@ -1,0 +1,34 @@
+
+#menu {position:relative; font-size:12px; height:28px; width:760px; background:#333}
+#menu ul {padding:0; margin:0; list-style:none; height:28px; background:url("bg_menu.gif")/*tpa=http://www.mof.gov.vn/images/btc/images/bg_menu.gif*/ 0 0 repeat-x}
+#menu ul ul {padding:0; margin:0; list-style:none; width:1003px;}
+#menu li {float:left; height:28px;}
+#menu li a {padding:0 18px 0 18px; height:28px; background:url("menu_0.gif")/*tpa=http://www.mof.gov.vn/images/btc/images/menu_0.gif*/ right top no-repeat; color:#FFFFFF; text-decoration:none; font: bold 11px Arial; line-height:28px; float:left;}
+#menu li.current a {background:url("menu_1.gif")/*tpa=http://www.mof.gov.vn/images/btc/images/menu_1.gif*/ right top no-repeat; color:#000000}
+#menu li ul {position:absolute; top:28px; left:-9999px; z-index:10; background:#444; line-height:25px;}
+#menu li.current ul {left:0; z-index:1; background:url("menu_sub.gif")/*tpa=http://www.mof.gov.vn/images/btc/images/menu_sub.gif*/ top left repeat-x;}
+#menu li a:hover {background:url("menu_hover.gif")/*tpa=http://www.mof.gov.vn/images/btc/images/menu_hover.gif*/ top right repeat-x;  cursor:pointer; color:#000000}
+#menu li:hover > a {background:url("menu_hover.gif")/*tpa=http://www.mof.gov.vn/images/btc/images/menu_hover.gif*/ top right repeat-x; cursor:pointer; color:#000000}
+#menu li.current a:hover {background:url("menu_1.gif")/*tpa=http://www.mof.gov.vn/images/btc/images/menu_1.gif*/ top right no-repeat;}
+#menu li.current:hover a {background:url("menu_1.gif")/*tpa=http://www.mof.gov.vn/images/btc/images/menu_1.gif*/ top right no-repeat;}
+#menu ul :hover ul {left:0;}
+#menu ul :hover ul.blank {background:url("menu_sub.gif")/*tpa=http://www.mof.gov.vn/images/btc/images/menu_sub.gif*/ top left repeat-x}
+#menu ul :hover ul li a {display:inline; background:url("note_sub_0.gif")/*tpa=http://www.mof.gov.vn/images/btc/images/note_sub_0.gif*/ 3px 10px no-repeat; padding:0 15px; margin:0; font-size:12px; width:auto; white-space:nowrap; font-weight:normal; border:0; color:#000000; height:35px; line-height:25px;}
+#menu ul li.current ul li a,
+#menu li.current a:hover ul li a,
+#menu li.current:hover ul li a	{display:inline; background:url("note_sub_0.gif")/*tpa=http://www.mof.gov.vn/images/btc/images/note_sub_0.gif*/ 3px 10px no-repeat; padding:0 15px; margin:0; font-size:12px; width:auto; white-space:nowrap; font-weight:normal; color:#002157; height:33px; line-height:25px;}
+#menu li ul li.current_sub a,
+#menu li a:hover ul li.current_sub a,
+#menu li:hover ul li.current_sub a,
+#menu li:hover ul li {background:url("menu_sub.gif")/*tpa=http://www.mof.gov.vn/images/btc/images/menu_sub.gif*/ 0 0 repeat-x;}
+#menu li:hover ul li a{color:#002157; background:url("note_sub_0.gif")/*tpa=http://www.mof.gov.vn/images/btc/images/note_sub_0.gif*/ 3px 10px no-repeat; padding:0 15px; line-height:25px;}
+#menu li a:hover ul li a:hover,
+#menu li:hover ul li a:hover {color:#154da9; background:url("note_sub_1.gif")/*tpa=http://www.mof.gov.vn/images/btc/images/note_sub_1.gif*/ 3px 10px no-repeat}
+#menu li.current ul li.current_sub a,
+#menu li.current a:hover ul li.current_sub a,
+#menu li.current:hover ul li.current_sub a,
+#menu li.current a:hover ul li a:hover,
+#menu li.current:hover ul li a:hover {color:#154da9; background:url("note_sub_1.gif")/*tpa=http://www.mof.gov.vn/images/btc/images/note_sub_1.gif*/ 3px 10px no-repeat}		
+.box_search {width:243px; height:28px; padding:0; margin:0; background:url("bg_menu.gif")/*tpa=http://www.mof.gov.vn/images/btc/images/bg_menu.gif*/ 0 0 repeat-x; float:left}
+.box_search span.search_txt {float:left; padding:6px 3px 0 0; font:normal 12px Arial; color:#FFFFFF;}
+.input_txt {border:none; background:none; width:146px; height:21px; padding:2px; font:normal 12px Arial; color:#555555}

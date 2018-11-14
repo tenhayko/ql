@@ -1,0 +1,30 @@
+<!-- BEGIN: MAIN -->
+
+<table  border="0" class="table table-striped table-bordered table-hover"  width="100%" style="display:{hien}">  
+                
+                <!-- BEGIN: Sanpham -->
+               
+
+                <tr >
+                  <td  class="text-center" width="5%">{stt}</td>
+                  <td  class="text-right" width="30%">{row_Sanpham.ma_vach}</td>
+                    <td class="text-center"  width="10%" ><input type="text" id="soluongs_{stt}" value="{row_Sanpham.so_luong}" size="10" class="form-control text-center" onchange="return change_sluong({row_Sanpham.id},this.value)"/></td>
+                  <td class="text-right" width="20%">{row_Sanpham.don_gia}</td>
+                  <td class="text-right">{row_Sanpham.thanh_tien2}</td>
+                  <td class="text-center"  width="5%">
+                  	 <a onClick="xoa_sanpham({row_Sanpham.id})">
+                                	<div class="btn btn-xs btn-danger">
+                                            <i class="fa fa-times"></i> <strong>Xóa</strong>
+                                      </div>
+                                </a>
+                  </td>
+                
+                  
+                </tr>
+               
+  
+  <!-- END: Sanpham -->
+  <tr><th colspan="4"  class="text-center">Tổng tiền</th><td class="text-right"><strong>{count_s}</strong></td><td></td></tr>
+    </table>         
+           
+<!-- END: MAIN -->

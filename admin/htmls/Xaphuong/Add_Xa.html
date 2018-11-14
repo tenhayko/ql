@@ -1,0 +1,89 @@
+<!-- BEGIN: MAIN -->
+
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper"
+     xmlns="http://www.w3.org/1999/html">
+    <div class=" col_right">
+        <div class="url_top">
+            <a href="{portalurl}/admin"><strong>Trang chủ</strong> <img src="{portalurl}/images/caret-r.gif" border="0"  /></a>Xã/Phường
+
+            <div style="float:right; padding-top:1px;"><img src="{portalurl}/images/arrow_left.gif" border="0"  /><a href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
+        </div>
+        <div class=" col-xs-12  ">
+
+            <form action="" name="form1" id="form1" method="post" enctype="multipart/form-data">
+                <input type="hidden" id="xa-portal" value="_xa">
+
+                <table  cellpadding="5" width="50%" align="center" bordercolor="#B2DAEE" border="0"  style=" font-weight:bold; margin-top:10px;border-collapse: collapse;">
+
+                    <tr>
+                        <td>Nhập tên xã phường cần thêm/sửa:</td>
+                        <td colspan="2"><input id="name" name="name" class="input_text" value="{value.name}" type="text"  /></td>
+                    </tr>
+                    <tr>
+                        <td>STT xã:</td>
+                        <td colspan="2"><input id="stt" name="stt" value="{value.stt}" class="input_text"></td>
+                    </tr>
+                    <tr>
+                        <td>Số điện thoại:</td>
+                        <td colspan="2"><input id="sdt" name="sdt" value="{value.sdt}" class="input_text"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="3" class="text-center" align="center" height="20px">
+                            <input name="them" onClick="return confirm('Bạn có chắc không ?');"  type="submit" class="bot" value="Cập nhật" />&nbsp;
+                            <input name="" class="bot" type="reset" value="Nhập lại" />
+                        </td>
+                    </tr>
+
+
+                </table>
+
+
+            </form>
+
+
+            <table id="xa-table" width="80%" border="1" style="margin: 20 auto;">
+                <tr bgcolor="#f5f5f5" height="25px" style="font-weight:bold">
+                    <th class="text-center" style="padding: 5px;"><input class="btn btn-xs btn-danger" name="xoa_bt"  id="xoa_bt"  type="button" onclick="xoa_bt();" value="Xóa" /></th>
+                    <td align="center" style="padding: 5px;">STT</td>
+                    <td align="center" style="padding: 5px;">Tên xã/phường</td>
+                    <td align="center" style="padding: 5px;">Số thứ tự</td>
+                    <td align="center" style="padding: 5px;">Số điện thoại</td>
+                    <td align="center" style="padding: 5px;">Chức năng</td>
+                </tr>
+                <!-- BEGIN: list -->
+                <tr>
+                    <td style="padding: 5px;" class="text-center"><input name="xoa_checked" class="chk_xoa" type="checkbox" value="{row.id}" /></td>
+                    <td style="padding: 5px;" class="text-center">{stt}</td>
+                    <td style="padding: 5px;" class="text-center">{row.name}</td>
+                    <td style="padding: 5px;" class="text-center">{row.stt}</td>
+                    <td style="padding: 5px;" class="text-center">{row.sdt}</td>
+                    <td style="padding: 5px;" class="text-center">
+                        <a href="admin.php?op=Add_Xa&pid={row.id}">
+                            <div class="btn btn-xs btn-warning">
+                                <i class="fa fa-pencil"></i> <strong>Sửa</strong>
+                            </div>
+                        </a>
+                    </td>
+                </tr>
+                <!-- END: list -->
+            </table>
+
+
+        </div>
+        <div class="clear"></div>
+    </div>
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript" src="{portalurl}/js/jquery-1.6.min.js"></script>
+<script type="text/javascript" src="{portalurl}/js/ds_xaphuong.js"></script>
+
+<!-- BEGIN: MAIN -->
+

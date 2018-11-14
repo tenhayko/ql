@@ -1,0 +1,315 @@
+<!-- BEGIN: MAIN -->
+<script type="text/javascript" src="{portalurl}/js/Add_phivatthe.js"></script>
+<link type="text/css" rel="stylesheet" href="{portalurl}/css/cacbuoc.css" />
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper">
+    <div class=" col_right">
+        <div class="url_top">
+            <a href="{portalurl}/admin"><strong>Trang chủ</strong> </a> <i class="fa fa-angle-double-right"></i> <strong>Thêm thông tin phi vật thể</strong>
+
+            <div style="float:right; padding-top:1px;"><img src="{portalurl}/images/arrow_left.gif" border="0"/><a
+                    href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
+        </div>
+        <div class=" data ">
+
+            <!--bat dau nhap form-->
+            
+
+
+    <div class="col-md-12" style=" margin-top:20px">
+    <div class="wizard" style="margin-left:2%;">
+        <a class="current"><span class="badge badge-inverse">1</span> Nhập thông tin cơ bản</a>
+        <a><span class="badge">2</span>upload hình ảnh</a>
+        <a><span class="badge">3</span> upload video</a>
+    </div>
+        <div class="col-md-12 " style="margin-top:10px;">
+            
+            
+            
+            <form class="form-horizontal" action=""  method="post" enctype="multipart/form-data">
+             <input type="hidden" value="{pid}" name="pid"  />
+                <fieldset>
+
+                    <!-- Form Name -->
+                   
+
+
+
+                    <!-- Text input-->
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="textinput">Tên di sản <span id="danh_dau">*</span></label>
+                        <div class="col-sm-10">
+                            <input type="text" name="name_pvt" id="name_pvt" placeholder="Tên di sản" class="form-control" value="{name_pvt}">
+                        </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="textinput">Địa chỉ <span id="danh_dau">*</span></label>
+                        <div class="col-sm-10">
+                            <input type="text" name="diachi" placeholder="Địa chỉ" class="form-control" value="{diachi}" id="diachi">
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="form-group form-group-sm ">
+                        <label class="col-sm-2 control-label" for="textinput">Huyện/TP <span id="danh_dau">*</span></label>
+                        <div class="col-sm-4">
+                           {huyen}
+                        </div>
+
+                        <label class="col-sm-2 control-label" for="textinput">Xã/Phường <span id="danh_dau">*</span></label>
+                        <div class="col-sm-4">
+                         <div id="statediv">
+                            <select name="xa"   class="form-control" id="add_xa">
+                                 {phong_select}
+                            </select>
+                             <select name="xa" class="form-control" id="edit_xa">
+                                  <option value="">Lựa chọn</option>
+                                     {xa_editSelected}
+                                   </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label"  >Thuộc loại <span id="danh_dau">*</span></label>
+                        <div class="col-sm-4">
+                            <select name="loai_ds"   class="form-control" id="loai_ds">
+                                <option>Lựa chọn</option>
+                                {loai_ds}
+                            </select>
+                        </div>
+
+                        <label class="col-sm-2 control-label"  >Hiện trạng</label>
+                        <div class="col-sm-4">
+                            <select name="hientrang"   class="form-control">
+                                <option>Lựa chọn</option>
+                                {hientrang}
+                            </select>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- Text input-->
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label"  >Dân tộc</label>
+                        <div class="col-sm-4">
+                            <select name="dantoc" class="form-control">
+                                <option>Lựa chọn</option>
+                                {dantoc}
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label"  >Số lượng nghệ nhân</label>
+                        <div class="col-sm-4">
+                            <input  name="sl_nn" type="number" min="1"   class="form-control" value="{sl_nn}">
+                        </div>
+
+                        <label class="col-sm-2 control-label"  >Số người thực hành</label>
+                        <div class="col-sm-4">
+                            <input  name="sl_th" type="number" min="1"   class="form-control" value="{sl_th}">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label"  >Số lượng bài bản</label>
+                        <div class="col-sm-4">
+                            <input  name="sl_bb" type="number" min="1"   class="form-control" value="{sl_bb}">
+                        </div>
+
+                        <label class="col-sm-2 control-label"  >Số người biết dạy</label>
+                        <div class="col-sm-4">
+                            <input  name="sn_bd" type="number" min="1"   class="form-control" value="{sn_bd}">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label"  >Học viên hiện nay</label>
+                        <div class="col-sm-4">
+                            <input  name="sl_hv" type="number" min="1"   class="form-control" value="{sl_hv}">
+                        </div>
+
+                        <label class="col-sm-2 control-label"  >Hình thức truyền dạy</label>
+                        <div class="col-sm-4">
+                            <input  name="hinhthuc_td" type="text" min="1"   class="form-control" value="{hinhthuc_td}">
+                        </div>
+                    </div>
+
+
+
+                    <!-- Text input-->
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label"  >Kỹ năng tập tục</label>
+                        <div class="col-sm-10">
+                            <input  name="kynang" type="text" placeholder="" class="form-control" value="{kynang}">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label"  >Nguồn lực tham gia bảo vệ</label>
+                        <div class="col-sm-10">
+                            <input  name="nguonluc" type="text" placeholder="" class="form-control" value="{nguonluc}">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label"  >Tài liệu</label>
+                        <div class="col-sm-10">
+                            <input  name="tailieu" type="text" placeholder="" class="form-control" value="{tailieu}">
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm">
+                     <span style="display:{hien_dk}">
+                        <label class="col-sm-2 control-label" for="textinput">Đính kèm</label>
+                        
+
+                        <div class="col-sm-4">
+                           <span>
+                        	<!-- BEGIN: file_dk -->
+                            	<a href="{portalurl}/images/Image/{row_dk.dk_file}">{row_dk.dk_file}</a></br>
+                            <!-- END: file_dk -->
+                        </span>
+                        </div>
+                        </span>
+                   <span>
+                        <label class="col-sm-2 control-label" for="textinput">File đính kèm</label>
+                       
+
+                        <div class="col-sm-4">
+                           <div class="col-sm-4">
+                           <input name="dinhkem[]" id="files_dk" type="file" multiple="multiple" /> 
+                        </div>
+                        </div>
+                        </span>
+                         
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label"  >Nội dung chi tiết</label>
+                        <div class="col-sm-10">
+
+                            <textarea class="ckeditor" cols="80" id="editor1" name="noidung" rows="10">
+								{noidung}
+                            </textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <div class=" text-center">
+                            <input type="submit" class="btn btn-primary btn-sm" name="Update_finsh" value="Tiếp tục" onclick="return ValidateForm_phi()">
+                                <button type="reset" class="btn btn-default btn-sm">Nhập lại</button>
+
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+            
+            
+            
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+
+            <!--end form nhập-->
+            
+            
+
+
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script language = "Javascript">
+$(document).ready(function(){
+	var pid = $("#pid").val();
+	if(pid == ""){
+		$("#add_xa").show();
+		$("#edit_xa").hide();
+	}else{
+		$("#add_xa").hide();
+		$("#edit_xa").show();
+	}
+});
+
+function ValidateForm(){
+
+	
+	//nhap dia chi
+	
+	if (document.form1.date_gv.value == ""){
+		alert("Nhập ngày giao việc")
+		document.form1.date_gv.focus()
+		return false
+	}
+	
+	//nhap dien thoai
+	if (document.form1.tieude_cv.value == ""){
+		alert("Nhập tiêu đề")
+		document.form1.tieude_cv.focus()
+		return false
+	}
+	
+	
+	if (document.form1.han_xl.value == ""){
+		alert("Nhập hạn xử lý")
+		document.form1.han_xl.focus()
+		return false
+	}
+	
+	
+	
+
+var chks = document.getElementsByName('canbo_xl[]');
+var hasChecked = false;
+for (var i = 0; i < chks.length; i++)
+{
+if (chks[i].checked)
+{
+hasChecked = true;
+break;
+}
+}
+if (hasChecked == false)
+{
+alert("Mời bạn chọn cán bộ.");
+return false;
+}
+return true;
+
+
+
+	//tuong tu voi cac ham khac
+	
+	if ((emailID.value==null)||(emailID.value=="")){
+		alert("Nhap dia chi hom thu")
+		emailID.focus()
+		return false
+	}
+	if (echeck(emailID.value)==false){
+		emailID.value=""
+		emailID.focus()
+		return false
+	}
+	return true
+ }
+</script>
+<!-- BEGIN: MAIN -->

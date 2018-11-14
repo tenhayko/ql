@@ -1,0 +1,97 @@
+
+
+
+ul {
+list-style: none;
+}
+
+
+
+ul#topnav {
+float: left;
+width: 100%;
+position: relative;
+behavior: url(whateverhover.htc);
+
+}
+
+ul#topnav li  {
+float: left;
+margin-right:50px;
+padding: 0px;
+color: #03F;
+}
+
+ul#topnav li a {
+display: block;
+text-decoration: none;
+color: #03F;
+}
+
+
+ul#topnav li ul.children {
+margin-top:22px;
+float: left;
+height: 39px;
+line-height: 39px;
+padding: 0px;
+position: absolute;
+left: 0px;
+ top: 39px;
+display: none;
+width: 100%;
+color: white;
+background: #bc0000;
+-moz-border-radius: 0px 0px 5px 5px;
+-khtml-border-radius: 0px 0px 5px 5px;
+-webkit-border-radius: 0px 0px 5px 5px;
+}
+
+ul#topnav li ul.children li {
+border: none;
+border-right:1px solid white;
+}
+ul#topnav li ul li:last-child {
+	border-right:none;
+}
+ul#topnav li:hover ul {
+display: block;
+}
+
+ul#topnav li ul a {
+display: inline;
+color: #fff;
+}
+
+ul#topnav li ul a:hover {
+text-decoration: underline;
+}
+
+ul#topnav li ul li:hover {
+background: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+<!-- BEGIN: MAIN -->
+ <form action="" method="post" enctype="multipart/form-data">
+ <span style="color:#00C; font-weight:bold;">&nbsp;</span>
+<table class="table-bordered table"  style="display:{hien_ketqua}; margin-top:20px;">
+                    <th class="text-center">STT</th>
+                    <th class="text-center">Tên di tích</th>
+                    <th class="text-center">Huyện/Tp - Xã</th>
+                    <th class="text-center">Thuộc loại</th>
+                    <th class="text-center">Diện tích đất</th>
+                    <th class="text-center">Diện tích xây dựng</th>
+                    <th class="text-center">Hiện trạng</th>
+                </tr>
+                <!-- BEGIN: vatthe -->
+                <tr >
+                  <td align="center">{stt}</td>
+                  <td ><a href="admin.php?op=View_vatthe_hungha&pid={row_vatthe.id}">{row_vatthe.tenditich}</a></td>
+                  <td>{huyen_xa}</td>
+                  <td >{loai_ds}</td>
+                  <td >{row_vatthe.dientichdat}</td>
+                  <td >{row_vatthe.dientichxaydung}</td>
+                  <td >{hientrang}</td>
+                </tr>
+                <!-- END: vatthe -->
+               {pagination}
+            </table>
+           
+</form>
+<!-- END: MAIN -->

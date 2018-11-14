@@ -1,0 +1,59 @@
+		*{
+			
+			list-style:none;
+			
+		}
+		
+		
+		
+		ul.domtabs{
+			float:left;
+			width:100%;
+			margin:10px 0 0 0;			
+				
+		}
+		ul.domtabs li{
+			float:left;
+			padding:0 .5em 0 0;
+			
+		}
+		ul.domtabs a:link,
+		ul.domtabs a:visited,
+		ul.domtabs a:active,
+		ul.domtabs a:hover{
+			
+			padding: 7px 12px;
+			display:block;
+			background:#ccc;
+			color:#666;
+			
+			 border-radius: 5px 5px 0px 0px;
+			font-weight:bold;
+			text-decoration:none;
+		}
+		
+		ul.domtabs a:hover{
+			background:#BC0000;
+			color:#fff;
+		}
+		div.domtab .khung{
+			clear:both;
+			width:95%;
+			margin:auto;
+			border:1px solid #7384B7;
+			border-radius: 5px;
+			min-height:400px;
+			color:#fff;
+			padding:1em 1em;
+			margin-bottom:10px;
+		}
+		ul.domtabs li.active a:link,
+		ul.domtabs li.active a:visited,
+		ul.domtabs li.active a:active,
+		ul.domtabs li.active a:hover{
+			background:#509DC4;
+			color:#fff;
+		}
+		
+		
+		

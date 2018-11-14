@@ -1,0 +1,38 @@
+<!-- BEGIN: MAIN -->
+ <form action="" method="post" enctype="multipart/form-data">
+  <!--<span style="color:#00C; font-weight:bold;">{msg}</span>-->
+<table class="table-bordered table"  style="display:{hien_ketqua}; margin-top:20px;">
+                    <th style="display:{hien_role};width: 5%" class="text-center"><input type="submit" class="btn btn-primary btn-xs" value="Xóa" name="Delete_xoa"></th>
+                    <th class="text-center">STT</th>
+                    <th class="text-center">Tên lễ hội</th>
+                    <th class="text-center">Thời gian lễ hội</th>
+                    <th class="text-center">Xếp loại di sản</th>
+                    <th class="text-center">Huyện</th>
+                    <th class="text-center">Xã</th>
+                    <th class="text-center">Thôn</th>
+                    <th class="text-center">Sửa</th>
+                     
+                </tr>
+                
+                
+                <!-- BEGIN: Danhsach -->
+                <tr >
+                    <td align="center" style="display:{hien_role}"><input name="check[]" type="checkbox" value="{row.id}"></td>
+                  <td align="center">{stt}</td>
+                 
+                  <td><a href="admin.php?op=Add_lehoi&pid={row.id}">{row.ten_lenhoi}</a></td>
+                   <td >{row.thoigian_lehoi}</td>
+                     <td >{row.name_xephang}</td>
+                  <td >{row.name_huyen}</td>
+                   <td >{row.name_xa}</td>
+                    <td >{row.name_thon}</td>
+                   
+                    <td ><a href="admin.php?op=Add_lehoi&pid={row.id}"><img src="images/edit.gif" border="0"  /></a></td>
+                 
+                </tr>
+                <!-- END: Danhsach -->
+               {pagination}
+            </table>
+           
+</form>
+<!-- END: MAIN -->

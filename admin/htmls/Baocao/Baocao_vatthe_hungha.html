@@ -1,0 +1,191 @@
+<!-- BEGIN: MAIN -->
+<script type="text/javascript" src="{portalurl}/js/jquery-1.6.min.js"></script>
+<script type="text/javascript" src="{portalurl}/js/Baocao_vatthe_hungha.js"></script>
+
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper">
+    <div class=" col_right">
+        <div class="url_top">
+            <a href="{portalurl}/admin"><strong>Trang chủ</strong> </a> <i class="fa fa-angle-double-right"></i> <strong>Báo cáo vật thể</strong>
+
+            <div style="float:right; padding-top:1px;"><img src="{portalurl}/images/arrow_left.gif" border="0"/><a
+                    href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
+        </div>
+        <div class=" data ">
+
+            <!--bat dau nhap form-->
+            
+    <div class="row" style="width:96%; margin-top:20px">
+        <div class="col-md-12 ">
+         <form id="form1" name="form1" method="post" action="">
+                    <div  style="width:80%;margin-left:5%;">
+
+           
+            <input type="hidden"  value="1" id="dulieu"/>
+
+             <div>
+               <input type="radio" name="optionsRadios" id="radio_tenditich" data-tab="tenditich" value="8" />
+                <label for="radio">Báo cáo theo tên</label>
+             </div>
+             <div>
+              <input type="radio" name="optionsRadios" id="radio_niendai" data-tab="niendai" value="1" />
+                <label for="radio">Báo cáo theo niên đại</label>
+             </div>
+             <div>
+              <input type="radio" name="optionsRadios" id="radio_tomtat" data-tab="tomtat" value="2" />
+                <label for="radio">Báo cáo theo tóm tắt lịch sử</label>
+             </div>
+             <div>
+              <input type="radio" name="optionsRadios" id="radio_thoigian" data-tab="thoigian" value="3" />
+                <label for="radio">Báo cáo theo thời gian lễ hội</label>
+             </div>
+             <div>
+             <input type="radio" name="optionsRadios" id="radio_dientich" data-tab="dientich" value="4" />
+                <label for="radio">Báo cáo theo diện tích đất - diện tích đất xây dựng</label>
+             </div>
+            <div>
+              <input type="radio" name="optionsRadios" id="radio_huyenxa" data-tab="huyenxa" value="5" />
+                <label for="radio">Báo cáo theo Huyện - Xã</label>
+             </div>
+             <div>
+             <div>
+              <input type="radio" name="optionsRadios" id="radio_loaids" data-tab="loaids" value="6"/>
+                <label for="radio">Báo cáo theo loại di sản</label>
+             </div>
+            
+             <div>
+              <input type="radio" name="optionsRadios" id="radio_tinhtrang" data-tab="tinhtrang" value="7" />
+                <label for="radio">Báo cáo theo tình trạng</label>
+             </div>
+             <div class="form-group form-group-sm " style="margin-top:20px;">
+             <div id="bc_tenditich" data-tab="tenditich" class="tab-pn">
+                    <label class="col-sm-2 control-label" for="textinput">Tên di tích</label>
+    
+                    <div class="col-sm-10">
+                       <input class="form-control" name="tenditich" id="tenditich">       
+                    </div>
+                 </div>
+                <div id="bc_niendai" data-tab="niendai" class="tab-pn">
+                    <label class="col-sm-2 control-label" for="textinput">Niên đại</label>
+    
+                    <div class="col-sm-10">
+                       <input class="form-control" name="niendai" id="niendai">       
+                    </div>
+                 </div>
+                   <div id="bc_tomtat" data-tab="tomtat" class="tab-pn">
+                    <label class="col-sm-2 control-label" for="textinput">Tóm tắt</label>
+    
+                    <div class="col-sm-10">
+                       <input class="form-control" name="tomtat" id="tomtat" >       
+                    </div>
+                 </div>
+                 
+                 <div id="bc_thoigian" data-tab="thoigian" class="tab-pn">
+                    <label class="col-sm-2 control-label" for="textinput">Thời gian</label>
+    
+                    <div class="col-sm-10">
+                       <input class="form-control" name="thoigian" id="thoigian" >       
+                    </div>
+                 </div>
+                 
+            
+                <div id="bc_huyenxa" class="tab-pn" data-tab="huyenxa">
+                    <label class="col-sm-2 control-label" for="textinput">Huyện/TP</label>
+    
+                    <div class="col-sm-4">
+                                {huyen}
+                    </div>
+    
+                    <label class="col-sm-2 control-label" for="textinput">Xã/Phường</label>
+    
+                    <div class="col-sm-4">
+                                    <div id="statediv">
+                                            <select id="xaphuong" class="form-control" >
+                                                {phong_select}
+                                            </select>
+                                        </div>
+                </div>
+                 
+                </div>
+             <div id="bc_dientich" class="tab-pn" data-tab="dientich">
+                    <label class="col-sm-2 control-label" for="textinput">Diện tích đất</label>
+    
+                    <div class="col-sm-4">
+                                   <input class="form-control" id="dientich_dat" name="dientich_dat" />  
+                    </div>
+    
+                    <label class="col-sm-2 control-label" for="textinput">Diện tích xây dựng</label>
+    
+                    <div class="col-sm-4">
+                            <input class="form-control" id="dientich_xd" name="dientich_xd" />       
+                 
+                </div>
+              </div>
+            <div id="bc_loaids" class="tab-pn" data-tab="loaids">
+                    <label class="col-sm-2 control-label" for="textinput" style="margin-top:8px; margin-left:10%">Loại di sản</label>
+    
+                    <div class="col-sm-4">
+                                 <select name="loai_ds" class="form-control" id="loai_ds">
+                                <option value="">Lựa chọn</option>
+                                {loai_ds}
+                                 </select>
+                    </div>
+                 
+                </div>
+                
+            <div id="bc_hientrang" class="tab-pn" data-tab="tinhtrang">
+                    <label class="col-sm-2 control-label" for="textinput" style="margin-top:8px; margin-left:10%">Tình trạng</label>
+    
+                    <div class="col-sm-4">
+                                 <select name="tinhtrang" class="form-control" id="tinhtrang">
+                                <option value="">Lựa chọn</option>
+                                {hientrang}
+                                 </select>
+                    </div>
+                 
+                </div>
+            </div>
+             </div>
+              <div class="text-center frm-search" style="margin-top:70px;">
+                <input type="button" value="Tìm kiếm" class="btn-primary btn btn-sm" onClick="return timkiembc()">
+                 <input type="button" value="Xuất Excel Để In" class="btn btn-primary btn-sm" onclick="Export_Xls2();" />
+            </div>
+            
+ </form>
+        </div>
+       
+        <!-- /.col-lg-12 -->
+         <br>
+        <br>
+        
+
+        <div id="danhsach_vatthe" style="width:98%;margin-left:4%;">
+            
+        </div>
+    </div>
+    <!-- /.row -->
+
+
+            <!--end form nhập-->
+            
+            
+
+
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script language="javascript" type="text/javascript">
+function popitup(url) {
+    newwindow=window.open(url,'name','height=500,width=620');
+    if (window.focus) {newwindow.focus()}
+    return false;
+}
+
+</script>
+
+<!-- BEGIN: MAIN -->

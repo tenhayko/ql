@@ -1,0 +1,93 @@
+<!-- BEGIN: MAIN -->
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper">
+    <div class=" col_right">
+        <div class="url_top">
+            <a href="{portalurl}/admin"><strong>Trang chủ</strong> </a> <i class="fa fa-angle-double-right"></i> <strong>Thêm mới slider</strong>
+            <div style="float:right; padding-top:1px;"><img src="{portalurl}/images/arrow_left.gif" border="0" /><a href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
+        </div>
+        <div class=" data ">
+            <!--bat dau nhap form-->
+            <div class="col-md-12" style=" margin-top:20px">
+                <div class="col-md-12 " style="margin-top:10px;">
+                    <form class="form-horizontal" action="" method="post" enctype="multipart/form-data" name="frm_Add_vathe" id="frm_Add_vathe">
+                        <fieldset>
+                            <!-- Form Name -->
+                            <!-- Text input-->
+                            <div class="form-group form-group-sm">
+                                <label class="col-sm-2 control-label" for="textinput">Tải ảnh</label>
+                                <div class="col-sm-4">
+                                    <div class="khung_anhdaidien_ttcn">
+                                        <div class="wrap-avatar">
+                                            <img src="{portalurl}/{img}">
+                                            <span class="change-image">Thay đổi ảnh</span>
+                                            <input type="file" name="image" id="image">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <div class=" text-center">
+                                    <input name="Update_finsh" class="btn btn-primary btn-sm" type="submit" value="Cập nhật" onclick="return ValidateForm()" />
+                                    <button type="reset" class="btn btn-default btn-sm">Nhập lại</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <!--end form nhập-->
+        </div>
+        <div class="clear"></div>
+        <input type="hidden" value="{portalurl}" id="portalurl" />
+    </div>
+</div>
+</div>
+</div>
+</div>
+<script language="javascript" type="text/javascript">
+function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function (e) {
+                $('.wrap-avatar img').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+    $(".wrap-avatar input[type='file']").change(function(){
+        readURL(this);
+    });
+   $(".change-image").click(function(){
+    $(".wrap-avatar input[type='file']").click();
+   });
+function getXMLHTTP() { //fuction to return the xml http object
+    var xmlhttp = false;
+    try {
+        xmlhttp = new XMLHttpRequest();
+    } catch (e) {
+        try {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        } catch (e) {
+            try {
+                xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e1) {
+                xmlhttp = false;
+            }
+        }
+    }
+
+    return xmlhttp;
+}
+//$(".btn-delete-all").click(function(){
+//CKEDITOR.instances['content'].setData('');
+//CKEDITOR.instances['editor1'].setData('<span></span>');
+//var tbl = $(".cke_editable").html();
+//alert(tbl);
+
+//});
+</script>
+<!-- BEGIN: MAIN -->

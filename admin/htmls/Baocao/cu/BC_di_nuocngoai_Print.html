@@ -1,0 +1,48 @@
+<!-- BEGIN: MAIN -->
+
+<form name="myform" action="" method="post" enctype="multipart/form-data">
+    <div class="table_data col-xs-12">
+        <div class="row">
+            <table class="table table-striped table-bordered">
+                <tr class="th">
+                    <th ><input style="padding-top:2px; padding-bottom:2px;" class="btn-sm btn btn-primary" type="submit" onClick="return confirm('Bạn có in không ?');"  name="Print_BC" value="In" /></th>
+
+                    <th >STT</th>
+                    <th >Họ và Tên</th>
+                    <th>Chức vụ</th>
+                    <th>Phòng ban</th> 
+                    <th>Thời gian đi</th>
+                    <th>Quốc gia</th>
+                </tr>
+
+                <!-- BEGIN: baocao_cbvc -->
+                <tr>
+
+                    <td align="center" class="text-center"><input type="checkbox" name="check[]" value="{row.id}" /></td>
+                    <td align="center">{stt}</td>
+                    <td class="text-center">{row.name_khaisinh}</td>
+                    <td class="text-center">{row.chucdanh}</td>
+                    <td align="center">{}</td>
+                    <td align="center">{}</td>
+                    <td align="center">{}</td>
+                </tr>
+                <!-- END: baocao_cbvc -->
+
+            </table> </div>
+        <div class="clear"></div>
+        <div class="pagination ">
+            {pagination}
+        </div>
+    </div>
+</form>
+
+<!-- BEGIN: MAIN --><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+</body>
+</html>

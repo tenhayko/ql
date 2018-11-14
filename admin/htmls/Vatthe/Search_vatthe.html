@@ -1,0 +1,36 @@
+<!-- BEGIN: MAIN -->
+ <form action="" method="post" enctype="multipart/form-data">
+  <!--<span style="color:#00C; font-weight:bold;">{msg}</span>-->
+<table class="table-bordered table"  style="display:{hien_ketqua}; margin-top:20px;">
+                    <th style="width: 5%" class="text-center"><input type="submit" class="btn btn-primary btn-xs" value="Xóa" name="Del_vt"></th>
+                    <th class="text-center">STT</th>
+                    <th class="text-center">Tên di sản</th>
+                    <th class="text-center">Huyện/Tp - Xã</th>
+                    <th class="text-center">Thuộc loại</th>
+                    <th class="text-center">Chuyên đề</th>
+                    <th class="text-center">Hiện trạng</th>
+                   <th class="text-center">Sửa</th>
+                   <th class="text-center">Sửa ảnh</th>
+                    <th class="text-center">Sửa video</th>
+                </tr>
+                
+                
+                <!-- BEGIN: vatthe -->
+                <tr >
+                    <td align="center"><input name="xoa_vatthe" type="checkbox" value="{row_vatthe.id}"></td>
+                  <td align="center">{stt}</td>
+                  <td ><a href="admin.php?op=View_vatthe&pid={row_vatthe.id}">{row_vatthe.name_vt}</a></td>
+                  <td>{huyen_xa}</td>
+                  <td >{loai_ds}</td>
+                  <td >{chuyende}</td>
+                  <td >{hientrang}</td>
+                  <td align="center"><a href="admin.php?op=Add_vatthe&pid={row_vatthe.id}"  title="Sửa vật thể" ><img src="{portalurl}/images/edit.gif"  border="0" /></a></td>
+                   <td class="text-center"><a href="admin.php?op=Add_vatthe_imgs&pid={row_vatthe.id}"  title="Sửa ảnh" ><img src="{portalurl}/images/icon anh.png"  border="0" width="17"/></a></td>
+                  <td class="text-center"><a href="admin.php?op=Add_vatthe_video&pid={row_vatthe.id}"  title="Sửa vieo" ><img src="{portalurl}/images/icon video.png"  border="0"  width="17"/></a></td>
+                </tr>
+                <!-- END: vatthe -->
+               {pagination}
+            </table>
+           
+</form>
+<!-- END: MAIN -->

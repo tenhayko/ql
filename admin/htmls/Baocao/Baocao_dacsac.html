@@ -1,0 +1,97 @@
+<!-- BEGIN: MAIN -->
+<script type="text/javascript" src="{portalurl}/js/jquery-1.6.min.js"></script>
+<script type="text/javascript" src="{portalurl}/js/Baocao_dacsac.js"></script>
+
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper">
+    <div class=" col_right">
+        <div class="url_top">
+            <a href="{portalurl}/admin"><strong>Trang chủ</strong> </a> <i class="fa fa-angle-double-right"></i> <strong>Báo cáo đặc sắc</strong>
+
+            <div style="float:right; padding-top:1px;"><img src="{portalurl}/images/arrow_left.gif" border="0"/><a
+                    href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
+        </div>
+        <div class=" data ">
+
+            <!--bat dau nhap form-->
+            
+
+
+    <div class="row" style="width:96%; margin-top:20px">
+        <div class="col-md-12 ">
+            
+            <div  style="width:80%;margin-left:5%;">
+           <form id="form1" name="form1" method="post" action="">
+             
+             <div class="form-group form-group-sm " style="margin-top:20px;">
+             	<div id="bc_huyenxa">
+                    <label class="col-sm-2 control-label" for="textinput">Huyện/TP</label>
+    
+                    <div class="col-sm-4">
+                                {huyen}
+                    </div>
+    
+                    <label class="col-sm-2 control-label" for="textinput">Xã/Phường</label>
+    
+                    <div class="col-sm-4">
+                                    <div id="statediv">
+                                            <select id="xaphuong" class="form-control" >
+                                                {phong_select}
+                                            </select>
+                                        </div>
+                </div>
+                 
+                </div>
+                 
+                
+            
+           
+             </div>
+            </form>
+
+        </div>
+         <div class="text-center" style="margin-top:70px;">
+                <input type="button" value="Tìm kiếm" class="btn-primary btn btn-sm" onClick="return timkiembc()">
+                <input type="button" value="Xuất Excel Để In" class="btn btn-primary btn-sm" onclick="Export_Xls2();" />
+            </div>
+        <!-- /.col-lg-12 -->
+         <br>
+        <br>
+        
+
+        <div id="danhsach_vatthe" style="width:98%;margin-left:4%;">
+            
+        </div>
+    </div>
+    <!-- /.row -->
+
+
+            <!--end form nhập-->
+            
+            
+
+
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script language="javascript" type="text/javascript">
+function popitup(url) {
+	newwindow=window.open(url,'name','height=500,width=620');
+	if (window.focus) {newwindow.focus()}
+	return false;
+}
+function Export_Xls2(){
+	var huyen = $("#huyen").val();
+		var xaphuong = $("#xaphuong").val();
+		if(xaphuong == null)
+			xaphuong = "";
+			window.location="admin.php?op=Export_Baocao_dacsac&huyen="+huyen+"&xaphuong="+xaphuong;
+		}
+</script>
+
+<!-- BEGIN: MAIN -->

@@ -1,0 +1,321 @@
+<!-- BEGIN: MAIN -->
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper">
+                <div class=" col_right">
+                    <div class="url_top">
+                        <a href="{portalurl}/admin"><strong>Trang chủ</strong> <img src="{portalurl}/images/caret-r.gif" border="0"  /></a>Cơ cấu tổ chức  
+                   
+                   <div style="float:right; padding-top:1px;">
+                   
+                   
+                     <a href="{portalurl}/them-can-bo" title="Thêm cán bộ"><img src="{portalurl}/images/them.gif" border="0"  /> <strong>Thêm cán bộ</strong>&nbsp; </a>&nbsp;
+                     
+                     <a href="{portalurl}/them-phong-ban" title="Thêm phòng ban"><img src="{portalurl}/images/them.gif" border="0"  /> <strong>Thêm phòng ban</strong>&nbsp; </a>&nbsp;
+                   
+                     <a href="javascript:window.history.back();"><img src="{portalurl}/images/arrow_left.gif" border="0"  /> Trở lại&nbsp; </a></div>
+                    </div>
+                    <div class=" col-xs-12  ">
+
+   
+   
+<form id="form1" name="form1" action="" method="post" enctype="multipart/form-data">
+ <input type="hidden" value="{id_edit}" name="id_edit"  /><br />
+
+
+<table width="100%" cellpadding="5" bordercolor="#B2DAEE" border="0" style=" font-size:14px;border-collapse: collapse;">
+<tr>
+<td valign="top" width="83%">
+
+
+<table width="100%" cellpadding="5" bordercolor="#B2DAEE" border="0" style=" font-size:13px;border-collapse: collapse;">
+  <tr>
+    <td width="200"><strong>&nbsp;Mã nhân viên</strong></td>
+    <td>&nbsp;<input name="code_nv" value="{ma_cb}"  style="font-weight:bold; color:red" id="code_nv" class="input_text" type="text" {bien}/> <div  id="status"></div></td>
+  </tr>
+  <tr>
+    <td><strong>&nbsp;Họ và Tên</strong> <span id="danh_dau">*</span></td>
+    <td>&nbsp;<input name="full_name" id="full_name" value="{full_name}" class="input_text" type="text" /></td>
+  </tr>
+  <tr>
+    <td><strong>&nbsp;Ngày sinh</strong></td>
+    <td >&nbsp;<input name="ngaysinh" id="ngaysinh" value="{ngaysinh}" class="input_text" type="text" />
+
+    <a href="javascript:void(0)" onclick="if(self.gfPop)gfPop.fPopCalendar(document.form1.ngaysinh);return false;" HIDEFOCUS><img name="popcal" align="absmiddle" src="{portalurl}/images/admin/calbtn.gif" width="34" height="22" border="0" alt=""></a>
+        
+    </td>
+  </tr>
+  
+  <tr>
+    <td>&nbsp;<strong>Email </strong> <span id="danh_dau">*</span></td>
+    
+    <td>&nbsp;<input name="email" value="{email}" id="email" class="input_text" type="text"   /> <div  id="status2"></div></td>
+    
+    
+    
+  </tr>
+  
+  
+  <tr>
+    <td>&nbsp;<strong>Điện thoại</strong></td>
+    <td>&nbsp;<input name="phone" value="{phone}" class="input_text" type="text" /></td>
+  </tr>
+  
+  
+  <tr>
+    <td><strong>&nbsp;Nơi sinh</strong></td>
+    <td>&nbsp;<input name="noisinh" value="{noisinh}" class="input_text" type="text" /></td>
+  </tr>
+  
+  <tr>
+    <td>&nbsp;<strong>Chỗ ở hiện tại</strong></td>
+    <td>&nbsp;<input name="diachi_hientai" id="diachi_hientai" value="{diachi_hientai}" class="input_text" type="text" /></td>
+  </tr>
+  
+  
+  
+ 
+</table>
+
+
+
+</td>
+<td width="17%"> {img}<br />
+<input type="file" name="avata" />
+</td>
+</tr>
+
+
+
+
+<tr>
+<td valign="top">
+
+
+<table  width="100%" cellpadding="5" bordercolor="#B2DAEE" border="0" style=" font-size:14px;border-collapse: collapse;">
+  <tr>
+    <td  width="200"><strong>&nbsp;Giới tính</strong></td>
+    <td>
+    <select name="sex" class="input_text">
+    <option value="Nam">Lựa chọn</option>
+    <option value="Nam" {selectNam}>Nam</option>
+    <option value="Nữ" {selectNu}>Nữ</option>
+    </select>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;<strong>Đơn vị</strong></td>
+    <td>
+    
+     <select class="input_text" name="id_donvi" onChange="getState(this.value)">
+    <option>Lựa chọn</option>
+    
+    <!-- BEGIN: donvi_phong -->
+		<option {select} value="{row.id}" >{row.name_phong}</option>
+    <!-- END: donvi_phong -->
+    
+    
+    
+    
+    </select>
+    
+    
+        
+    </td>
+  </tr>
+  
+   <tr>
+    <td>&nbsp;<strong>Phòng ban</strong> <span id="danh_dau">*</span></td>
+    <td>
+    
+    
+   
+     <div id="statediv">
+     <select class="input_text">
+     </select>
+    </div>
+    
+   
+    
+    
+    
+        
+    </td>
+  </tr>
+  
+  <tr>
+    <td><strong>&nbsp;Chức vụ</strong> <span id="danh_dau">*</span></td>
+    <td><select class="input_text"  name="chuvu" id="chuvu"><option>Lựa chọn</option>
+   
+    <!-- BEGIN: chucvu -->
+		<option style=" background:#f5f5f5; padding:6px;font-weight:bold">{rows.name}</option>
+         <!-- BEGIN: sub_chucvu -->
+        <option {select} value="{row.id}"> &nbsp;- {row.name}</option>
+         <!-- END: sub_chucvu -->
+        
+    <!-- END: chucvu -->
+  
+    </select></td>
+  </tr>
+  
+   <tr height="30px">
+    <td>&nbsp;<strong>Thông tin đăng nhập</strong> <span id="danh_dau">*</span></td>
+    <td>&nbsp;</td>
+  </tr>
+  
+  <tr id="thongtindangnhap">
+    <td></td>
+    <td>&nbsp;<input style="font-weight:bold"  class="input_text" type="text" name="aid" onclick="javascript: return submitForm();" id="aid"  placeholder="Nhập thông tin đăng nhập"   /> 
+    <input class="input_text" type="password" name="pass" onclick="javascript: return submitForm();" id="pass"  placeholder="Mật khẩu"   style=" width:120px;font-weight:bold" /> 
+    </td>
+  </tr>
+  
+ 
+  
+  
+  
+  
+</table>
+
+
+
+
+
+</td>
+<td>
+
+
+
+</td>
+</tr>
+<tr><td colspan="2" align="center"><input  onClick="return ValidateForm()" value="Hoàn thành" name="Insert_nv" class="bot" type="submit"  />
+<input name="" value="Nhập lại" class="bot" type="reset" />
+</td></tr>
+</table>
+
+
+
+
+</form>
+
+
+                    </div>
+                    
+                    
+                    
+                   
+                    
+                  <div class="clear"></div>  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--cai nay la phan list phong ban bo phan-->
+
+<iframe width=199 height=178 name="gToday:normal:agenda.js" id="gToday:normal:agenda.js" src="{portalurl}/WeekPicker/ipopeng.htm" scrolling="no" frameborder="0" style="visibility:visible; z-index:999; position:absolute; top:-500px; left:-500px;">
+<iframe width=188 height=26 name="gToday:datetime:agenda.js:gfPop5:plugins_time.js" id="gToday:datetime:agenda.js:gfPop5:plugins_time.js" src="{portalurl}/WeekPicker/datetime_ipopeng.htm" scrolling="no" frameborder="0" style="visibility:visible; z-index:999; position:absolute; left:-500px; top:0px;">picker4</iframe>
+</iframe> 
+
+<script language = "Javascript">
+
+
+function ValidateForm(){
+
+	
+	//nhap dia chi
+	
+	if (document.form1.full_name.value == ""){
+		alert("Nhập họ tên")
+		document.form1.full_name.focus()
+		return false
+	}
+	
+	//nhap dien thoai
+	if (document.form1.email.value == ""){
+		alert("Nhập email")
+		document.form1.email.focus()
+		return false
+	}
+	
+	
+	if (document.form1.aid.value == ""){
+		alert("Nhập tên đăng nhập")
+		document.form1.aid.focus()
+		return false
+	}
+	
+	
+	
+
+
+
+	//tuong tu voi cac ham khac
+	
+	if ((emailID.value==null)||(emailID.value=="")){
+		alert("Nhap dia chi hom thu")
+		emailID.focus()
+		return false
+	}
+	if (echeck(emailID.value)==false){
+		emailID.value=""
+		emailID.focus()
+		return false
+	}
+	return true
+ }
+</script>
+
+
+<script language="javascript" type="text/javascript">
+
+function getXMLHTTP() { //fuction to return the xml http object
+		var xmlhttp=false;	
+		try{
+			xmlhttp=new XMLHttpRequest();
+		}
+		catch(e)	{		
+			try{			
+				xmlhttp= new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			catch(e){
+				try{
+				xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+				}
+				catch(e1){
+					xmlhttp=false;
+				}
+			}
+		}
+		 	
+		return xmlhttp;
+    }
+	
+	function getState(countryId) {		
+		
+		var strURL="{portalurl}/admin.php?op=Bophan&country="+countryId;
+		var req = getXMLHTTP();
+		
+		if (req) {
+			
+			req.onreadystatechange = function() {
+				if (req.readyState == 4) {
+					// only if "OK"
+					if (req.status == 200) {						
+						document.getElementById('statediv').innerHTML=req.responseText;						
+					} else {
+						alert("There was a problem while using XMLHTTP:\n" + req.statusText);
+					}
+				}				
+			}			
+			req.open("GET", strURL, true);
+			req.send(null);
+		}		
+	}
+	function getCity(countryId,stateId) {}
+</script>
+
+<!-- BEGIN: MAIN -->

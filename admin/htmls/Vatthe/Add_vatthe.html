@@ -1,0 +1,306 @@
+<!-- BEGIN: MAIN -->
+<script type="text/javascript" src="{portalurl}/js/Add_vatthe.js"></script>
+<link type="text/css" rel="stylesheet" href="{portalurl}/css/cacbuoc.css" />
+
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper">
+    <div class=" col_right">
+        <div class="url_top">
+            <a href="{portalurl}/admin"><strong>Trang chủ</strong> </a> <i class="fa fa-angle-double-right"></i> <strong>Thêm thông tin di sản</strong>
+
+            <div style="float:right; padding-top:1px;"><img src="{portalurl}/images/arrow_left.gif" border="0"/><a
+                    href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
+        </div>
+        <div class=" data ">
+
+            <!--bat dau nhap form-->
+            
+
+
+    <div class="col-md-12" style=" margin-top:20px">
+    <div class="wizard" style="margin-left:2%; display:{hien_st}">
+        <a class="current"><span class="badge badge-inverse">1</span> Nhập thông tin cơ bản</a>
+        <a><span class="badge">2</span>upload hình ảnh</a>
+        <a><span class="badge">3</span> upload video</a>
+    </div>
+        <div class="col-md-12 " style="margin-top:10px;">
+            <form class="form-horizontal" action="{portalurl}/admin.php?op=Add_vatthe"  method="post" enctype="multipart/form-data" name="frm_Add_vathe" id="frm_Add_vathe">
+            <input type="hidden" value="{pid}" name="pid"  id="pid"/>
+            <input type="hidden" value="{video}" name="video"  id="video"/>
+                <fieldset>
+
+                    <!-- Form Name -->
+                    
+
+                    <!-- Text input-->
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="textinput">Tên di sản <span id="danh_dau">*</span></label>
+
+                        <div class="col-sm-10">
+                            <input type="text" value="{name_vt}" name="name_vt" id="name_vt"placeholder="Tên di sản" class="form-control">
+                        </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="textinput">Địa chỉ <span id="danh_dau">*</span></label>
+
+                        <div class="col-sm-10">
+                            <input type="text" name="diachi" value="{diachi}" placeholder="Địa chỉ" class="form-control" id="diachi">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group form-group-sm ">
+                        <label class="col-sm-2 control-label" for="textinput">Huyện/TP <span id="danh_dau">*</span></label>
+
+                        <div class="col-sm-4">
+                            {huyen}
+                        </div>
+
+                        <label class="col-sm-2 control-label" for="textinput">Xã/Phường <span id="danh_dau">*</span></label>
+
+                        <div class="col-sm-4">
+                           
+                           
+                           <div id="statediv">
+                                        <select name="" class="form-control" id="add_xa">
+                                            {phong_select}
+                                        </select>
+                                        <select name="xa" class="form-control" id="edit_xa">
+                                        	<option value="">Lựa chọn</option>
+                                            {xa_editSelected}
+                                        </select>
+                                    </div>
+                                    
+                                    
+                            
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label">Thuộc loại <span id="danh_dau">*</span></label>
+
+                        <div class="col-sm-4">
+                            <select name="loai_ds" class="form-control" id="loai_ds">
+                                <option>Lựa chọn</option>
+                                {loai_ds}
+                            </select>
+                        </div>
+
+                        <label class="col-sm-2 control-label">Chuyên đề</label>
+
+                        <div class="col-sm-4">
+                            <select name="chuyende" class="form-control">
+                                <option>Lựa chọn</option>
+                                {chuyende}
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label">Xếp hạng di sản</label>
+
+                        <div class="col-sm-4">
+                            <select name="xephang" class="form-control">
+                                <option value="0">Lựa chọn</option>
+                                {xephang}
+                            </select>
+                        </div>
+
+                        <label class="col-sm-2 control-label">Năm xếp hạng</label>
+
+                        <div class="col-sm-4">
+                        
+                        <input type="text" name="year_xh" value="{year_xh}" placeholder="Năm xếp hạng" class="form-control">
+                        
+                            
+                        </div>
+                    </div>
+					
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label">Hiện trạng</label>
+
+                        <div class="col-sm-4">
+                            <select name="hientrang" class="form-control">
+                                <option value="0">Lựa chọn</option>
+                                {hientrang}
+                            </select>
+                        </div>
+
+
+                        
+                    </div>
+                    
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="textinput">Công tác bảo vệ</label>
+
+                        <div class="col-sm-4">
+                            <textarea rows="" name="congtac_bv" cols="" class="form-control" style="height: 50px">{congtac_bv}</textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="textinput">Công tác tu bổ tôn tạo</label>
+
+                        <div class="col-sm-4">
+                            <textarea rows="" cols="" name="congtac_tb" class="form-control" style="height: 50px">{congtac_tb}</textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group form-group-sm">
+                     <span style="display:{hien_dk}">
+                        <label class="col-sm-2 control-label" for="textinput">Đính kèm</label>
+                        
+
+                        <div class="col-sm-4">
+                           <span>
+                        	<!-- BEGIN: file_dk -->
+                            	<a href="{portalurl}/images/Image/{row_dk.dk_file}">{row_dk.dk_file}</a></br>
+                            <!-- END: file_dk -->
+                        </span>
+                        </div>
+                        </span>
+                   <span>
+                        <label class="col-sm-2 control-label" for="textinput">File đính kèm</label>
+                       
+
+                        <div class="col-sm-4">
+                           <div class="col-sm-4">
+                           <input name="dinhkem[]" id="files_dk" type="file" multiple="multiple" /> 
+                        </div>
+                        </div>
+                        </span>
+                         
+                    </div>
+                    
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label"></label>
+
+                        <div class="col-sm-4">
+                            <h4>Mô tả ngắn gọn</h4>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label">Dân tộc</label>
+
+                        <div class="col-sm-4">
+                            <select name="dantoc" class="form-control">
+                                <option value="0">Lựa chọn</option>
+                                {dantoc}
+                            </select>
+                        </div>
+
+                        <label class="col-sm-2 control-label">Nhóm ngôn ngữ</label>
+
+                        <div class="col-sm-4">
+                            <select name="ngonngu" class="form-control">
+                                <option value="0">Lựa chọn</option>
+                                {ngonngu}
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label">Chất liệu</label>
+
+                        <div class="col-sm-4">
+                            <input name="chatlieu" value="{chatlieu}" type="text" class="form-control">
+                        </div>
+
+                        <label class="col-sm-2 control-label">Màu sắc</label>
+
+                        <div class="col-sm-4">
+                            <input name="mausac" value="{mausac}" type="text" min="1" class="form-control">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label">Kích thước</label>
+
+                        <div class="col-sm-4">
+                            <input name="kichthuoc" value="{kichthuoc}" type="text" class="form-control">
+                        </div>
+
+                        <label class="col-sm-2 control-label">Số lượng</label>
+
+                        <div class="col-sm-4">
+                            <input name="soluong" value="{soluong}" type="number" min="1" class="form-control">
+                        </div>
+                        
+                        
+                        
+                    </div>
+                    
+                   
+
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label"></label>
+
+                        <div class="col-sm-4">
+                            <h4>Nội dung chi tiết</h4>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label"> </label>
+
+                        <div class="col-sm-10">
+
+                            <textarea class="ckeditor" cols="80" id="editor1" name="noidung" id="noidung" rows="10">
+							{noidung}
+                            </textarea>
+                        </div>
+                    </div>
+                    
+                     <div class="form-group form-group-sm">
+                     <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-4">
+                    
+                   
+                        </div>
+                        
+                    </div>
+                    
+
+                    <div class="form-group form-group-sm">
+                        <div class=" text-center"><input name="Update_finsh" class="btn btn-primary btn-sm" type="submit" value="Tiếp tục" onclick="return ValidateForm()"/>
+                            
+                            <button type="reset" class="btn btn-default btn-sm">Nhập lại</button>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+
+            <!--end form nhập-->
+            
+            
+
+
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script language="javascript" type="text/javascript">
+
+</script>
+
+<!-- BEGIN: MAIN -->

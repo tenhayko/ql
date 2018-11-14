@@ -1,0 +1,139 @@
+<!-- BEGIN: MAIN -->
+<script type="text/javascript" src="{portalurl}/js/jquery-1.6.min.js"></script>
+
+<script type="text/javascript" src="{portalurl}/js/js_chung.js"></script>
+<LINK REL="StyleSheet" HREF="{portalurl}/css/style_paginate.css" TYPE="text/css">
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper">
+  <div class=" col_right">
+    <div class="url_top">
+      <a href="{portalurl}/admin"><strong>Trang chủ</strong> <img src="{portalurl}/images/caret-r.gif" border="0"  /></a><a href="{portalurl}/co-cau-to-chuc-phong"><strong>Thêm xã huyện</strong> </a>  
+
+      <div style="float:right; padding-top:1px;">
+
+       <a href="javascript:window.history.back();"><img src="{portalurl}/images/arrow_left.gif" border="0"  /> Trở lại&nbsp; </a></div>
+     </div>
+     <div class=" col-xs-12  ">
+
+
+
+       <form action="" method="post" enctype="multipart/form-data">
+         <input type="hidden" value="{pid}" name="pid"  />
+         <table width="98%" align="center" cellpadding="5" bordercolor="#B2DAEE" border="0" style=" margin-top:20px; font-size:12px;border-collapse: collapse;">
+
+
+
+          <tr>
+            <td>&nbsp;<strong>Tiêu đề <span id="danh_dau">*</span></strong></td>
+            <td>&nbsp;<input style="width:300px" name="name" value="{name}" class="input_text" type="text" /></td>
+          </tr>
+
+          <tr>
+            <td>&nbsp;<strong>Thuộc nhóm <span id="danh_dau">*</span> </strong></td>
+            <td>&nbsp;
+
+
+
+              <select class="input_text" name="id_xa" onChange="getState(this.value)">
+                <option>Lựa chọn</option>
+
+                <!-- BEGIN: donvi_xa -->
+                <option {select} value="{row.id}">{row.name}</option>
+                <!-- END: donvi_xa -->
+
+
+
+
+              </select>
+            </td>
+          </tr>
+
+
+          <tr>
+            <td>&nbsp;<strong>Số điện thoại</strong></td>
+            <td>&nbsp;<input name="phone" value="{phone}" class="input_text" type="text" /></td>
+          </tr>
+
+          <tr>
+            <td>&nbsp;<strong>STT</strong></td>
+            <td>&nbsp;
+
+              <select style="width:80px" class="input_text" name="stt">
+
+               <!-- BEGIN: stt_ht -->
+               {stt_pr}
+               <!-- END: stt_ht -->
+
+             </select></td>
+           </tr>
+
+           <tr>
+            <td colspan="2" align="left" style="font-size:12px; color:red">&nbsp;* Trường hợp bắt buộc không bỏ trống</td>
+
+          </tr>
+
+
+          <tr>
+            <td colspan="2" align="center"><input onClick="return ValidateForm_phong()" name="Update_phong" type="submit" class="bot" value="Hoàn thành" />&nbsp;
+
+
+
+
+            </td>
+
+          </tr>
+        </table>
+      </form>
+
+      <form action="" method="post" enctype="multipart/form-data">
+       <div class="form-group form-group-sm ">
+
+
+       </div>
+       <table width="98%" cellpadding="5" bordercolor="#B2DAEE" border="1" style="margin:7px;font-size:12px;border-collapse: collapse;">
+         <tr align="center" bgcolor="#F5f5f5" style="font-weight:bold"  height="30px">
+
+          <td>STT</td>
+          <td>Tiêu đề</td>
+          <td>Thuộc nhóm</td>
+          <td>Điện thoại</td>
+          <td><input name="Delete_xoa" onClick="return confirm('Bạn có chắc không ?');" class="bot" type="submit" value="Xóa" /></td>
+
+
+        </tr>
+
+        <!-- BEGIN: xahuyen -->
+
+        <tr align="center" height="30px"  bgcolor="#f5f5f5">
+
+          <td>{stt}</td>
+          <td><a href="{portalurl}/admin.php?op=Add_xahuyen&pid={row.id}">{row.name}</a></td>
+          <td><a href="{portalurl}/admin.php?op=Add_xahuyen&pid={id}">{name_huyen}</a></td>
+          <td>{row.phone}</td>
+          <td>
+            <input name="check[]" type="checkbox" value="{row.id}" />
+            <a href="{portalurl}/admin.php?op=Add_xahuyen&pid={row.id}" title="Sửa"><i class="fa fa-edit" style="font-size:15px"></i></a>
+          </td>
+        </tr>
+
+
+        <!-- END: xahuyen -->
+
+
+      </table>
+    </form>                       
+
+  </div>
+  <div class="clearfix"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<style>
+  TR {
+    border-bottom: 0px solid #ddd;
+
+  }
+</style>
+<!-- BEGIN: MAIN -->

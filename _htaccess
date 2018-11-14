@@ -1,0 +1,49 @@
+﻿RewriteEngine on
+Options +FollowSymlinks
+
+RewriteBase /
+
+#ErrorDocument 400 /
+#ErrorDocument 401 /
+#ErrorDocument 403 /
+#ErrorDocument 404 /
+#ErrorDocument 500 /
+
+RewriteCond %{HTTP_HOST} ^/bds_luucong/
+RewriteRule (.*) /bds_luucong/$1 [R=301,L]
+
+
+RewriteRule ^Homepage/([0-9]*)/(.*)  /index.php?menuid=$1
+RewriteRule ^Homepage/(.*)  /index.php
+
+
+
+RewriteRule ^logout.html  http://localhost/qldt/admin.php?op=logout
+
+RewriteRule ^tu-dien-he-thong  http://localhost/qldt/admin.php?op=Dictionary
+
+RewriteRule ^quan-tri-he-thong   http://localhost/qldt/admin.php?op=Configure
+
+RewriteRule ^phan-quyen-quan-tri   http://localhost/qldt/admin.php?op=mod_authors
+
+RewriteRule ^doi-mat-khau   http://localhost/qldt/admin.php?op=Changepass
+
+
+RewriteRule ^thiet-lap-nam-van-ban   http://localhost/qldt/admin.php?op=Setup_year
+
+
+
+
+
+#bao mat
+
+<files .htaccess>
+order allow,deny
+deny from all
+</files>
+
+<files config.php>
+order allow,deny
+deny from all
+</files>
+

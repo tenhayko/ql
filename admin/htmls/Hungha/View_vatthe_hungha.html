@@ -1,0 +1,269 @@
+<!-- BEGIN: MAIN -->
+<link rel="stylesheet" type="text/css" href="{portalurl}/css/fotorama.css">
+<script type="text/javascript" src="{portalurl}/js/jquery.js"></script>
+<script type="text/javascript" src="{portalurl}/js/fotorama.js"></script>
+<script>
+$(document).ready(function() {
+    $("#dong_vieo").hide();
+    $("#dongvideo").hide();
+    $("#xemvideo").show();
+    $("#xemvideo").click(function() {
+        $("#dong_vieo").show();
+        $("#dongvideo").show();
+        $("#xemvideo").hide();
+    });
+    $("#dongvideo").click(function() {
+        $("#dong_vieo").hide();
+        $("#dongvideo").hide();
+        $("#xemvideo").show();
+    });
+    //  $('a.lightbox2').divbox({caption: true, caption_control: false});
+    //        var opt = {
+    //          caption: function(obj){
+    //            return $('#'+$(obj).attr('rel')).html();
+    //          }
+    //        }
+    //        $('a.lightbox3').divbox(opt);
+});
+</script>
+<script type="text/javascript" src="{portalurl}/js/list_box/divbox.js"></script>
+<link type="text/css" rel="stylesheet" href="{portalurl}/js/list_box/divbox.css" />
+<link type="text/css" rel="stylesheet" href="{portalurl}/js/list_box/divbox.css" />
+<link type="text/css" rel="stylesheet" href="{portalurl}/js/show_anh/css/blueimp-gallery.min.css" />
+<link type="text/css" rel="stylesheet" href="{portalurl}/js/show_anh/css/bootstrap-image-gallery.css" />
+<!-- Bootstrap JS is not required, but included for the responsive demo navigation and button states -->
+<script src="{portalurl}/js/show_anh/js/jquery.min.js"></script>
+<script src="{portalurl}/js/show_anh/js/jquery.blueimp-gallery.min.js"></script>
+<script src="{portalurl}/js/show_anh/js/bootstrap-image-gallery.js"></script>
+<script src="{portalurl}/js/show_anh/js/demo.js"></script>
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper">
+    <div class=" col_right">
+        <div class="url_top">
+            <a href="{portalurl}/admin"><strong>Trang chủ</strong> </a> <i class="fa fa-angle-double-right"></i> <strong>Xem thông tin vật thể</strong>
+            <div style="float:right; padding-top:1px;"><img src="{portalurl}/images/arrow_left.gif" border="0" /><a href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
+        </div>
+        
+        <div class="data" id="printReady">
+            <!--bat dau nhap form-->
+            <form method="post" action="" enctype="multipart/form-data">
+                <div class="row" style="width:96%; margin-top:20px">
+                    <div class="col-md-12 ">
+                        <input type="hidden" value="{pid}" id="pid" name="pid" />
+                        <table width="100%" border="0" style="margin-left:4%" class="table table-bordered">
+                            <tr>
+                                <td class="name_vt">Tên di tích</td>
+                                <td align="center" valign="middle">:</td>
+                                <td colspan="4">{row.tenditich}</td>
+                            </tr>
+                            <tr>
+                                <td class="name_vt">Loại hình</td>
+                                <td align="center" valign="middle">:</td>
+                                <td colspan="4">{row.loaihinh}</td>
+                            </tr>
+                            <tr>
+                                <td class="name_vt" width="14%">Số tòa</td>
+                                <td align="center" valign="middle" width="2%">:</td>
+                                <td width="32%">{row.sotoa}</td>
+                                <td class="name_vt" width="14%">Số gian</td>
+                                <td align="center" valign="middle" width="2%">:</td>
+                                <td>{row.sogian}</td>
+                            </tr>
+                            <tr>
+                                <td class="name_vt">Niên đại</td>
+                                <td align="center" valign="middle">:</td>
+                                <td colspan="4">{niendai}</td>
+                            </tr>
+                            <tr>
+                                <td class="name_vt" width="14%">Huyện/TP</td>
+                                <td align="center" valign="middle" width="2%">:</td>
+                                <td width="32%">{huyen}</td>
+                                <td class="name_vt" width="14%">Xã/Phường</td>
+                                <td align="center" valign="middle" width="2%">:</td>
+                                <td>{xa}</td>
+                            </tr>
+                            <tr>
+                                <td class="name_vt">Thiết chế</td>
+                                <td align="center" valign="middle">:</td>
+                                <td>{loai_ds}</td>
+                            </tr>
+                            <tr>
+                                <td class="name_vt">Xếp hạng di sản</td>
+                                <td align="center" valign="middle">:</td>
+                                <td>{xephang}</td>
+                            </tr>
+                            <tr>
+                                <td class="name_vt">Hướng xếp hạng</td>
+                                <td align="center" valign="middle">:</td>
+                                <td>{huong_xephang}</td>
+                            </tr>
+                            <tr>
+                                <td class="name_vt">Diện tích đất</td>
+                                <td align="center" valign="middle">:</td>
+                                <td>{dientich_dat}</td>
+                                <td class="name_vt">Diện tích xây dựng</td>
+                                <td align="center" valign="middle">:</td>
+                                <td>{dientich_xd}</td>
+                            </tr>
+                            <tr>
+                                <td class="name_vt">Hiện trạng</td>
+                                <td align="center" valign="middle">:</td>
+                                <td colspan="4">{hientrang}</td>
+                            </tr>
+                            <tr>
+                                <td class="name_vt">Đối tượng thờ tự </td>
+                                <td align="center" valign="middle">:</td>
+                                <td colspan="4">{thotu}</td>
+                            </tr>
+                            <tr>
+                                <td class="name_vt">Những hiện vật tiêu biểu</td>
+                                <td align="center" valign="middle">:</td>
+                                <td colspan="4">{hienvat_tb}</td>
+                            </tr>
+                            <tr>
+                                <td class="name_vt">Công tác tu bổ tôn tạo</td>
+                                <td align="center" valign="middle">:</td>
+                                <td colspan="4">{congtac_tubo}</td>
+                            </tr>
+                            <tr>
+                                <td class="name_vt">Đính kèm file</td>
+                                <td align="center" valign="middle">:</td>
+                                <td colspan="4">
+                                    <!-- BEGIN: file_dk -->
+                                    <span><a href="{portalurl}/images/Image/{row_dk.dk_file}">{row_dk.dk_file}</a></br>
+       <!-- END: file_dk -->
+     </td>
+  </tr>
+    <tr>
+    <td class="name_vt">Ảnh</td>
+    <td align="center" valign="middle">:</td>
+    
+     <td colspan="4">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="display:{hienthi_anh}">
+  Xem hình ảnh
+</button>
+<span class="count-images">({count_anh} Ảnh)</span>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="width:1000px">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Hình ảnh</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="fotorama" data-width="1600" data-maxwidth="100%" data-ratio="16/9" data-allowfullscreen="true" data-nav="thumbs" data-arrows="true" data-allowfullscreen="native"  data-fit="cover" data-keyboard="true">
+                            <!-- BEGIN: file_anh -->
+                            <img src="{portalurl}/images/Image/{row_anh.img_vt}" height="400" alt="{row_anh.img_vt}">
+                            <!-- END: file_anh -->
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+        </div>
+    </div>
+    </td>
+    </tr>
+    <tr>
+        <td class="name_vt">Video</td>
+        <td align="center" valign="middle">:</td>
+        <td colspan="4">
+            <span style="display:{hien_video}">
+   
+    
+     <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".bs-example-modal-lg">Xem video</button>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+  <div class="modal-content">
+<div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">&nbsp;</h4>
+                </div>    
+                <div class="modal-content">
+     <object type="application/x-shockwave-flash" data="{portalurl}/images/Flash/player.swf" width="100%" height="100%">
+                                <param name="flashvars" value="file={portalurl}/{video}"/>
+                                <param name="quality" value="high" />
+                                <param name="name" value="hna-video" />
+                                <param name="bgcolor" value="#FFFFFF" />
+                                <param name="wmode" value="opaque" />
+                                <param name="allowscriptaccess" value="always" />
+                                <param name="allowfullscreen" value="true" />
+                        </object>  
+    </div>
+     <div class="modal-footer">
+            <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Đóng</button>
+          </div>
+  </div>
+</div>
+  </div>
+</span>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="6">
+            <h4 class="txt-detail-content pull-left">Nội dung chi tiết</h4>
+            <a class="pull-right btn-toggle-sort">
+              <i class="fa fa-sort"></i> <span>Hiện nội dung chi tiết</span>
+            </a>
+            </td>
+
+    </tr>
+    <tr class="wrap-content">
+        <td colspan="6">{noidung}</td>
+    </tr>
+    </table>
+</div>
+<!-- /.col-lg-12 -->
+</div>
+</form>
+<!-- /.row -->
+<!--end form nhập-->
+</div>
+<center><p><input type="button" value="In báo cáo" class="bot" onclick="CallPrint('printReady');" /></p></center>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<style>
+.name_vt {
+    font-weight: bold;
+}
+</style>
+<script language="javascript" type="text/javascript">
+$(function(){
+  $(".btn-toggle-sort").click(function(){
+    if($(this).find("span").html()=="Hiện nội dung chi tiết"){
+        $(this).find("span").html("Ẩn nội dung chi tiết");
+    }
+    else{
+        $(this).find("span").html("Hiện nội dung chi tiết"); 
+    }
+    $(".wrap-content").slideToggle();
+
+  });
+});
+function CallPrint(strid)
+    {
+    //$(strid).find(".btn-modal-img").hide();
+    var prtContent = document.getElementById(strid);
+    var WinPrint =
+      window.open('','','left=0,top=0,width=1300px,height=800px,toolbar=0,scrollbars=1,status=0');
+      WinPrint.document.write(prtContent.innerHTML);
+      WinPrint.document.close();
+      WinPrint.focus();
+      WinPrint.print();
+    WinPrint.close();
+    //  prtContent.innerHTML="test";
+    }
+function popitup(url) {
+    newwindow = window.open(url, 'name', 'height=500,width=620');
+    if (window.focus) {
+        newwindow.focus()
+    }
+    return false;
+}
+</script>
+<!-- BEGIN: MAIN -->

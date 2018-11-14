@@ -1,0 +1,168 @@
+<!-- BEGIN: MAIN -->
+<script type="text/javascript" src="{portalurl}/js/jquery-1.6.min.js"></script>
+<script type="text/javascript" src="{portalurl}/js/Add_lehoi.js"></script>
+
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper">
+    <div class=" col_right">
+        <div class="url_top">
+            <a href="{portalurl}/admin"><strong>Trang chủ</strong> </a> <i class="fa fa-angle-double-right"></i> <strong>Thêm mới lễ hội</strong>
+            <div style="float:right; padding-top:1px;"><img src="{portalurl}/images/arrow_left.gif" border="0" /><a href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
+            
+        </div>
+        <div class=" data ">
+            <!--bat dau nhap form-->
+            <div class="col-md-12" style=" margin-top:20px">
+                <div class="wizard" style="margin-left:2%; display:{hien_st}">
+                   
+                </div>
+                <div class="col-md-12 " style="margin-top:10px;">
+                    <form class="form-horizontal" action="" method="post" enctype="multipart/form-data" name="frm_Add_vathe" id="frm_Add_vathe">
+                        <input type="hidden" value="{pid}" name="pid" id="pid" />
+                        <input type="hidden" value="{row.xa}"  id="edit_xa" />
+                        <input type="hidden" value="{row.thon}" id="edit_thon" />
+                      
+                        <fieldset>
+                            <!-- Form Name -->
+                            <!-- Text input-->
+                            <div class="form-group form-group-sm">
+                                <label class="col-sm-2 control-label" for="textinput">Tên lễ hội<span id="danh_dau">*</span></label>
+                                <div class="col-sm-10">
+                                    <input type="text" value="{row.ten_lenhoi}" name="ten_lenhoi" id="ten_lenhoi" class="form-control">
+                                </div>
+                            </div>
+                            
+                           
+                            <!-- Text input-->
+                            <div class="form-group form-group-sm">
+                                <label class="col-sm-2 control-label" for="textinput">Thời gian lễ hội <span id="danh_dau">*</span></label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="thoigian_lehoi" value="{row.thoigian_lehoi}" id="thoigianlehoi">
+                                </div>
+                            </div>
+                            
+                         
+                            
+                            <div class="form-group form-group-sm">
+                                <label class="col-sm-2 control-label">Xếp hạng di sản</label>
+                                <div class="col-sm-4">
+                                    <select name="xephang" class="form-control">
+                                        <option value="0">Lựa chọn</option>
+                                        {xephang}
+                                    </select>
+                                </div>
+                                  <label class="col-sm-2 control-label" for="textinput">Huyện/TP <span id="danh_dau">*</span></label>
+                                <div class="col-sm-4">
+                                     <select name="huyen" class="form-control" id="huyen" onchange="get_xa(this.value)">
+                                            <option value="">Lựa chọn</option> 
+                                            {huyen}
+                                        </select>
+                                </div>
+                               
+                            </div>
+                            
+                               
+                              
+                            <div class="form-group form-group-sm ">
+                              
+                                <label class="col-sm-2 control-label" for="textinput">Xã/Phường <span id="danh_dau">*</span></label>
+                                <div class="col-sm-4">
+                                    <div id="statediv">
+                                        <select name="" class="form-control" id="xa">
+                                            <option value="">Lựa chọn</option> 
+                                        </select>
+                                       
+                                    </div>
+                                </div>
+                                 <label class="col-sm-2 control-label" for="textinput">Thôn <span id="danh_dau">*</span></label>
+                                <div class="col-sm-4" id="div_thon">
+                                    <div id="div_thon">
+                                        <select name="" class="form-control" id="thon">
+                                           <option value="">Lựa chọn</option> 
+                                        </select>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                               <div class="form-group form-group-sm">
+                                <label class="col-sm-2 control-label" for="textinput">Ghi chú </label>
+                                <div class="col-sm-10">
+                                    <textarea style="height:100px;" class="form-control" name="ghi_chu" id="ghi_chu">{row.ghi_chu}</textarea>
+                                </div>
+                            </div>
+                            
+                            
+                           
+                            <div class="form-group form-group-sm">
+                                <div class=" text-center">
+                                    <input name="Update_finsh" class="btn btn-primary btn-sm" type="submit" value="Tiếp tục" onclick="return ValidateForm()" />
+                                    <button type="reset" class="btn btn-default btn-sm">Nhập lại</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <!--end form nhập-->
+        </div>
+        <div class="clear"></div>
+        <input type="hidden" value="{portalurl}" id="portalurl" />
+    </div>
+</div>
+</div>
+</div>
+</div>
+<script language="javascript" type="text/javascript">
+function xoa_dk(id, table) {
+    var portalurl = $("#portalurl").val();
+    var strURL = portalurl + "/admin.php?op=Delete_dinhkem_cv&id=" + id + '&table=' + table;
+
+    var req = getXMLHTTP();
+
+    if (req) {
+
+        req.onreadystatechange = function() {
+            if (req.readyState == 4) {
+                // only if "OK"
+                if (req.status == 200) {
+                    $("#hien_" + id).html("");
+                    //document.getElementById('ds_cv_fins').innerHTML=req.responseText;         
+                } else {
+                    alert("There was a problem while using XMLHTTP:\n" + req.statusText);
+                }
+            }
+        }
+        req.open("GET", strURL, true);
+        req.send(null);
+    }
+
+}
+
+function getXMLHTTP() { //fuction to return the xml http object
+        var xmlhttp = false;
+        try {
+            xmlhttp = new XMLHttpRequest();
+        } catch (e) {
+            try {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            } catch (e) {
+                try {
+                    xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e1) {
+                    xmlhttp = false;
+                }
+            }
+        }
+
+        return xmlhttp;
+    }
+    //$(".btn-delete-all").click(function(){
+    //CKEDITOR.instances['content'].setData('');
+    //CKEDITOR.instances['editor1'].setData('<span></span>');
+    //var tbl = $(".cke_editable").html();
+    //alert(tbl);
+
+//});
+</script>
+<!-- BEGIN: MAIN -->

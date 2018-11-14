@@ -1,0 +1,104 @@
+<!-- BEGIN: MAIN -->
+<script type="text/javascript" src="{portalurl}/js/jquery-1.6.min.js"></script>
+<script type="text/javascript" src="{portalurl}/js/Ds_lehoi.js"></script>
+<script type="text/javascript" src="{portalurl}/js/js_chung.js"></script>
+<link rel="stylesheet" href="{portalurl}/css/jquery-ui.css">
+<script src="{portalurl}/js/jquery-ui.js"></script>
+<LINK REL="StyleSheet" HREF="{portalurl}/css/style_paginate.css" TYPE="text/css">
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper">
+  <div class=" col_right">
+    <div class="url_top"> <a href="{portalurl}/admin"><strong>Trang chủ</strong> </a> <i class="fa fa-angle-double-right"></i> <strong>Danh sách lễ hội</strong>
+      <div style="float:right; padding-top:1px;">
+      
+      <a href="{portalurl}/admin.php?op=Impor_lehoi">
+<i class="fa fa-file-excel-o"></i>
+Import dữ liệu
+</a>
+      <img src="{portalurl}/images/arrow_left.gif" border="0"/><a
+                    href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
+    </div>
+    <div class=" data "> 
+      
+      <!--bat dau nhap form--> 
+      
+      <br />
+      <script>
+  $(function() {
+    $( "#tenditich" ).autocomplete({
+      source: 'search.php'
+    });
+  });
+  </script>
+      <div class="row" style="width:99%; margin:auto">
+        <form action="" class="form-horizontal" role="form">
+          
+          <!-- Text input-->
+          <div class="form-group form-group-sm">
+            <label class="col-sm-2 control-label" for="textinput">Tên lễ hội</label>
+            <div class="col-sm-10">
+              <input type="text"  class="form-control" id="ten_lenhoi" onkeyup="timkiem(1,10)">
+            </div>
+          </div>
+          <div class="form-group form-group-sm ">
+            <label class="col-sm-2 control-label">Xếp loại di sản</label>
+            <div class="col-sm-4">
+              <select name="xephang" class="form-control" id="xephang" onchange="timkiem(1,10)">
+                <option value="">Lựa chọn</option>
+                
+                                {xephang}
+                            
+              </select>
+            </div>
+            <label class="col-sm-2 control-label" for="textinput">Huyện</label>
+            <div class="col-sm-4">
+              <select name="huyen" class="form-control" id="huyen" onchange="get_xa(this.value)">
+                <option value="">Lựa chọn</option>
+                 
+                  {huyen}
+                                        
+              </select>
+            </div>
+          </div>
+          <div class="form-group form-group-sm">
+            <label class="col-sm-2 control-label" for="textinput">Xã</label>
+            <div class="col-sm-4">
+              <div id="statediv">
+                <select name="" class="form-control" id="xa">
+                  <option value="">Lựa chọn</option>
+                </select>
+              </div>
+            </div>
+            <label class="col-sm-2 control-label">Thôn</label>
+            <div class="col-sm-4" id="div_thon">
+             
+              
+                                        <select name="" class="form-control" id="thon">
+                                           <option value="">Lựa chọn</option> 
+                                        </select>
+                                       
+                                    </div>
+            
+            </div>
+         
+          <div class="text-center"> <a class="btn btn-success" href="admin.php?op=Add_lehoi">Thêm mới lễ hội </a>
+            <input type="button"  value="Tìm kiếm" class="btn-primary btn " onClick="return timkiem(1,10)">
+          </div>
+        </form>
+        <br>
+        <br>
+        <div id="danhsach_vatthe"> </div>
+      </div>
+      
+      <!-- /.row --> 
+      
+      <!--end form nhập--> 
+      
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- BEGIN: MAIN -->

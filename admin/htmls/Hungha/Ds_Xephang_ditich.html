@@ -1,0 +1,197 @@
+<!-- BEGIN: MAIN -->
+<script type="text/javascript" src="{portalurl}/js/jquery-1.6.min.js"></script>
+<script type="text/javascript" src="{portalurl}/js/DS_Xephang.js"></script>
+<script type="text/javascript" src="{portalurl}/js/js_chung.js"></script>
+<link rel="stylesheet" href="{portalurl}/css/jquery-ui.css">
+<script src="{portalurl}/js/jquery-ui.js"></script>
+ 
+<LINK REL="StyleSheet" HREF="{portalurl}/css/style_paginate.css" TYPE="text/css">
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper">
+    <div class=" col_right">
+        <div class="url_top">
+            <a href="{portalurl}/admin"><strong>Trang chủ</strong> </a> <i class="fa fa-angle-double-right"></i> <strong>Xếp hạng di tích: {name_xephang}</strong>
+
+            <div style="float:right; padding-top:1px;"><img src="{portalurl}/images/arrow_left.gif" border="0"/><a
+                    href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
+        </div>
+        <div class=" data ">
+
+            <!--bat dau nhap form-->
+            
+<br />
+
+ <script>
+  $(function() {
+    $( "#tenditich" ).autocomplete({
+      source: 'search.php'
+    });
+  });
+  </script>
+  
+    <div class="row" style="width:99%; margin:auto">
+     
+      
+        <form action="" class="form-horizontal" role="form">
+		<input type="hidden" value="{pid}" id="pid" name="pid"  />
+            <!-- Text input-->
+             <div class="form-group form-group-sm">
+                <label class="col-sm-2 control-label" for="textinput">Tên di tích</label>
+                <div class="col-sm-10">
+               
+                    <input type="text"  placeholder="Tên di tích" class="form-control" id="tenditich">
+                </div>
+            </div>
+
+        <div class="form-group form-group-sm ">
+                <label class="col-sm-2 control-label" for="textinput">Huyện/TP</label>
+
+                <div class="col-sm-4">
+                            {huyen}
+                </div>
+
+                <label class="col-sm-2 control-label" for="textinput">Xã/Phường</label>
+
+                <div class="col-sm-4">
+                                <div id="statediv">
+                                        <select id="xaphuong" class="form-control" >
+                                            {phong_select}
+                                        </select>
+                                    </div>
+                </div>
+            </div>
+ <div class="form-group form-group-sm">
+                <label class="col-sm-2 control-label">Thuộc loại</label>
+
+                <div class="col-sm-4">
+                      <select name="loai_ds" class="form-control" id="loai_ds">
+                                <option value="">Lựa chọn</option>
+                                {loai_ds}
+                            </select>
+                </div>
+<label class="col-sm-2 control-label">Hiện trạng</label>
+
+                <div class="col-sm-4">
+                      <select name="hientrang" class="form-control" id="hientrang">
+                                <option value="">Lựa chọn</option>
+                                {hientrang}
+                            </select>
+                </div>
+                
+            </div>
+            <div class="form-group form-group-sm">
+                <label class="col-sm-2 control-label"></label>
+
+                <div class="col-sm-4">
+                     <a class="btn-toggle-search"><i class="fa fa-plus-square-o"></i> <span>Tìm kiếm mở rộng</span></a>
+                </div>
+
+                
+            </div>
+            <div class="advance-search">
+             <div class="form-group form-group-sm">
+                <label class="col-sm-2 control-label" for="textinput">Niên đại</label>
+
+                <div class="col-sm-10">
+                    <input type="text" placeholder="Niên đại" class="form-control" id="name_disan">
+                </div>
+            </div>
+
+            <div class="form-group form-group-sm">
+                <label class="col-sm-2 control-label" for="textinput">Tóm tắt giá trị lịch sử</label>
+
+                <div class="col-sm-10">
+                    <input type="text" placeholder="Tóm tắt giá trị lịch sử" class="form-control" id="tom_tat">
+                </div>
+            </div>
+
+            <div class="form-group form-group-sm">
+                <label class="col-sm-2 control-label" for="textinput">Thời gian lễ hội</label>
+
+                <div class="col-sm-10">
+                    <input type="text" placeholder="Thời gian diễn ra lễ hội" class="form-control" id="thoigiandienra">
+                </div>
+            </div>
+            <div class="form-group form-group-sm">
+                <label class="col-sm-2 control-label" for="textinput">Những hiện vật tiêu biểu</label>
+
+                <div class="col-sm-10">
+                    <input type="text" placeholder="Những hiện vật tiêu biểu" class="form-control" id="hienvat_tb">
+                </div>
+            </div>
+
+            <div class="form-group form-group-sm ">
+                <label class="col-sm-2 control-label" for="textinput">Diện tích đất</label>
+
+                <div class="col-sm-4">
+                            <input type="text" class="form-control" id="dientich_dat">
+                </div>
+
+                <label class="col-sm-2 control-label" for="textinput">Diện tích xây dựng</label>
+
+                <div class="col-sm-4">
+                                <input type="text" class="form-control" id="dientich_xd">
+                </div>
+            </div>
+
+          
+           
+
+            </div>
+           
+			          
+
+
+            <div class="text-center">
+            
+           <a class="btn btn-warning" href="admin.php?op=Xephang_ditich">Quay trở về Xếp hạng di tích</a>
+
+                <input type="button" value="Tìm kiếm" class="btn-primary btn btn-sm" onClick="return timkiem(1,10)">
+            </div>
+        </form>
+        <br>
+        <br>
+        
+	<p align="center" style="font-size:26px; color:#039">Danh sách di tích: {name_xephang}</p>
+        <div id="danhsach_vatthe">
+            
+        </div>
+		
+    </div>
+    
+    
+   
+    <!-- /.row -->
+
+
+            <!--end form nhập-->
+            
+            
+
+
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    $(".btn-toggle-search").click(function(){
+        if($(this).find("i.fa").hasClass("fa-plus-square-o")){
+            $(this).find("i.fa").removeClass("fa-plus-square-o").addClass("fa-minus-square-o");
+        }
+        else{
+            $(this).find("i.fa").removeClass("fa-minus-square-o").addClass("fa-plus-square-o");
+        }
+        if($(this).find("span").html()=="Tìm kiếm mở rộng"){
+            $(this).find("span").html("Tắt tìm kiếm mở rộng");
+        }
+        else{
+            $(this).find("span").html("Tìm kiếm mở rộng");
+        }
+        $(".advance-search").slideToggle();
+    });
+</script>
+
+
+<!-- BEGIN: MAIN -->

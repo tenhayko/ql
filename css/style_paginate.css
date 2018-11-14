@@ -1,0 +1,30 @@
+
+.wrap{ display:inline-block; width:100%;}
+a:link{ text-decoration:none;}
+body{ margin:0; padding:0; font-size:12px; font-family:Arial,sans-serif;}
+
+/* CSS Table */
+.hastable table{margin:0 0 10px 0;background:#fff;width:100%;border:1px solid #dedede;border-bottom:none;border-collapse:collapse;}
+.hastable table .row2{background:#f1f1f1;}
+.hastable thead td, .hastable thead th{background-color:#e6e6e6;}
+.hastable tr td{line-height:16px;}
+.hastable tr td, .hastable thead th{border-left:1px solid #ccc;text-align:left;padding:8px;color:#616161;vertical-align:middle;}
+.hastable thead td, .hastable thead th{font-weight:bold;padding:10px 6px;text-align:center;}
+.hastable th, .hastable td{border-bottom:1px solid #dedede;}
+.hastable tbody th{padding:8px 8px;text-align:left;}
+.hastable tbody tr.alt td, .hastable tbody tr.odd td{color:#464646;}
+.hastable tbody tr.alt td, .hastable tbody tr.alt th, .hastable tbody tr.odd{background-color:#f5f5f5;}
+.hastable tbody tr:hover td, .hastable tbody tr:hover th{background-color:#FF0;}
+/* CSS Pagination */
+.pagination_box{border:1px solid #e3e3e3; border-top:2px solid #E3E3E3; padding:10px; background:#f9f9f9;}
+.dataTable_length{display:inline-block; width:160px; float:left; line-height:26px; overflow:hidden;}
+.dataTable_length select{ padding:2px; border:1px solid #CCCCCC; height:26px; margin:0px 2px;}
+.dataTable_paginate{display:inline-block; margin:5px 0 0; float:right; }
+.dataTable_paginate .first,.dataTable_paginate .previous,.dataTable_paginate .paginate_active,.dataTable_paginate 
+.paginate_button,.dataTable_paginate .next,.dataTable_paginate .last{-moz-border-bottom-colors:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;background:none repeat scroll 0 0 #EEE;border-image:none;cursor:pointer;font-size:11px;border-color:#CCC #CCC #CCC #CCC;border-style:solid solid solid solid;border-width:1px 1px 1px 1px;padding:5px 10px; margin-right:2px;}
+.dataTable_paginate .first{border-left:1px solid #CCC;}
+.dataTable_paginate .paginate_active{background:none repeat scroll 0 0 #FFF;}
+.dataTable_paginate .paginate_button:hover{background:none repeat scroll 0 0 #EEE;}
+.dataTable_paginate .paginate_button_disabled{background:none repeat scroll 0 0 #EEE;color:#CCC;cursor:default;}
+.dataTable_paginate a{color:#666;}
+.dataTable_paginate a:hover{text-decoration:none;}

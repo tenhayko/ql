@@ -1,0 +1,24 @@
+<!-- BEGIN: MAIN -->
+ <form action="" method="post" enctype="multipart/form-data">
+  <!--<span style="color:#00C; font-weight:bold;">{msg}</span>-->
+<table class="table-bordered table"  style="display:{hien_ketqua}; margin-top:20px;">
+                    <th class="text-center">STT</th>
+                    <th class="text-center">Ảnh</th>
+                    <th class="text-center" style="display:{hien_role}">Sửa</th>
+                    <th style="display:{hien_role};width: 5%" class="text-center"><input type="submit" class="btn btn-primary btn-xs" value="Xóa" name="Del_vt"></th>
+                </tr>
+                
+                
+                <!-- BEGIN: vatthe -->
+                <tr >
+                  <td align="center">{stt}</td>
+                  <td align="center"><img src="{row_vatthe.url}" width="100px;" /></td>
+                  <td align="center" style="display:{hien_role}"><a href="admin.php?op=Add_slider&pid={row_vatthe.id}"  title="Sửa ảnh" ><i class="fa fa-edit"></i></a></td>
+                  <td align="center" style="display:{hien_role}"><input name="xoa_vatthe[]" type="checkbox" value="{row_vatthe.id}"></td>
+                </tr>
+                <!-- END: vatthe -->
+               {pagination}
+            </table>
+           
+</form>
+<!-- END: MAIN -->

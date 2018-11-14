@@ -1,0 +1,301 @@
+<!-- BEGIN: MAIN -->
+<script type="text/javascript" src="{portalurl}/js/Add_vatthe.js"></script>
+<link type="text/css" rel="stylesheet" href="{portalurl}/css/cacbuoc.css" />
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper">
+    <div class=" col_right">
+        <div class="url_top">
+            <a href="{portalurl}/admin"><strong>Trang chủ</strong> </a> <i class="fa fa-angle-double-right"></i> <strong>{title} thông tin di sản {name_ditich}</strong>
+            <div style="float:right; padding-top:1px;"><img src="{portalurl}/images/arrow_left.gif" border="0" /><a href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
+            <div style="float:right; padding-top:1px;">
+                <a href="{portalurl}/admin.php?op=Get_excel"> <i class="fa fa-file-excel-o"></i> Import dữ liệu</a>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;</div>
+        </div>
+        <div class=" data ">
+            <!--bat dau nhap form-->
+            <div class="col-md-12" style=" margin-top:20px">
+                <div class="wizard" style="margin-left:2%; display:{hien_st}">
+                    <a class="current"><span class="badge badge-inverse">1</span> Nhập thông tin cơ bản</a>
+                    <a><span class="badge">2</span>upload hình ảnh</a>
+                    <a><span class="badge">3</span> upload video</a>
+                </div>
+                <div class="col-md-12 " style="margin-top:10px;">
+                    <form class="form-horizontal" action="" method="post" enctype="multipart/form-data" name="frm_Add_vathe" id="frm_Add_vathe">
+                        <input type="hidden" value="{pid}" name="pid" id="pid" />
+                        <input type="hidden" value="{video}" name="video" id="video" />
+                        <fieldset>
+                            <!-- Form Name -->
+                            <!-- Text input-->
+                            <div class="form-group form-group-sm">
+                                <label class="col-sm-2 control-label" for="textinput">Tên di tích<span id="danh_dau">*</span></label>
+                                <div class="col-sm-10">
+                                    <input type="text" value="{row.tenditich}" name="tenditich" id="tenditich" placeholder="Tên di tích" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="col-sm-2 control-label" for="textinput">Loại hình</label>
+                                <div class="col-sm-10">
+                                    <input type="text" value="{row.loaihinh}" name="loaihinh" id="loaihinh" placeholder="Loại hình" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm ">
+                                <label class="col-sm-2 control-label" for="textinput">Số tòa</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="sotoa" value="{row.sotoa}" id="sotoa" class="form-control" />
+                                </div>
+                                <label class="col-sm-2 control-label" for="textinput">Số gian </label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="sogian" value="{row.sogian}" id="sogian" />
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="col-sm-2 control-label" for="textinput">Niên đại<span id="danh_dau">*</span></label>
+                                <div class="col-sm-10">
+                                    <input type="text" value="{row.niendai}" name="niendai" id="niendai" placeholder="Niên đại" class="form-control">
+                                </div>
+                            </div>
+                            <!-- Text input-->
+                            <div class="form-group form-group-sm">
+                                <label class="col-sm-2 control-label" for="textinput">Tóm tắt <span id="danh_dau">*</span></label>
+                                <div class="col-sm-10">
+                                    <textarea style="height:100px;" class="form-control" name="tomtat" id="tomtat">{row.tomtat}</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="col-sm-2 control-label" for="textinput">Thời gian lễ hội <span id="danh_dau">*</span></label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="thoigianlehoi" value="{row.thoigianlehoi}" id="thoigianlehoi">
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm ">
+                                <label class="col-sm-2 control-label" for="textinput">Diện tích đất</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="dientichdat" value="{row.dientichdat}" id="dientichdat" class="form-control" />
+                                </div>
+                                <label class="col-sm-2 control-label" for="textinput">Diện tích xây dựng </label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="dientichxaydung" value="{row.dientichxaydung}" id="dientichxaydung" />
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="col-sm-2 control-label" for="textinput">Những hiện vật tiêu biểu </label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="hienvat_tb" value="{row.hienvat_tb}" id="hienvat_tb">
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="col-sm-2 control-label" for="textinput">Quá trình tu bổ tôn tạo</label>
+                                <div class="col-sm-10">
+                                    <textarea style="height:100px;" class="form-control" name="congtac_tubo" id="congtac_tubo">{row.congtac_tubo}</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="col-sm-2 control-label">Hiện trạng</label>
+                                <div class="col-sm-4">
+                                    <select name="hientrang" class="form-control">
+                                        <option value="0">Lựa chọn</option>
+                                        {hientrang}
+                                    </select>
+                                </div>
+                                <label class="col-sm-2 control-label">Xếp hạng di sản</label>
+                                <div class="col-sm-4">
+                                    <select name="xephang" class="form-control">
+                                        <option value="0">Lựa chọn</option>
+                                        {xephang}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="col-sm-2 control-label">Thiết chế <span id="danh_dau">*</span></label>
+                                <div class="col-sm-4">
+                                    <select name="loai_ds" class="form-control" id="loai_ds">
+                                        <option>Lựa chọn</option>
+                                        {loai_ds}
+                                    </select>
+                                </div>
+                                <label class="col-sm-2 control-label">Hướng tới xếp hạng </label>
+                                <div class="col-sm-4">
+                                    <select name="huong_xephang" class="form-control" id="huong_xephang">
+                                        <option>Lựa chọn</option>
+                                        {huong_xephang}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="col-sm-2 control-label">Tu sửa mở rộng</label>
+                                <div class="col-sm-4">
+                                    <input class="form-control" value="{row.congtac_tusua}" name="congtac_tusua" placholder="Tu sửa mở rộng" id="congtac_tusua" />
+                                </div>
+                                <label class="col-sm-2 control-label">Ghi chú</label>
+                                <div class="col-sm-4">
+                                    <textarea style="height:50px;" class="form-control" name="ghichu" id="ghichu">
+                                        {row.ghichu}
+                                    </textarea>
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm ">
+                                <label class="col-sm-2 control-label" for="textinput">Huyện/TP <span id="danh_dau">*</span></label>
+                                <div class="col-sm-4">
+                                    {huyen}
+                                </div>
+                                <label class="col-sm-2 control-label" for="textinput">Xã/Phường <span id="danh_dau">*</span></label>
+                                <div class="col-sm-4">
+                                    <div id="statediv">
+                                        <select name="" class="form-control" id="add_xa">
+                                            {phong_select}
+                                        </select>
+                                        <select name="xa" class="form-control" id="edit_xa">
+                                            <option value="">Lựa chọn</option>
+                                            {xa_editSelected}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group form-group-sm">
+                                <label class="col-sm-2 control-label" for="textinput">Đối tượng thờ tự </label>
+                                <div class="col-sm-4">
+                                
+                                <textarea name="thotu" style="height:60px" class="form-control" cols="" rows="">
+                                {row.thotu}
+                                </textarea>
+                                    
+                                    
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="form-group form-group-sm">
+                                <label class="col-sm-2 control-label" for="textinput">Thôn </label>
+                                <div class="col-sm-10">
+                                    <input type="text" value="{row.thon}" name="thon" id="thon" placeholder="Thôn" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <span style="display:{hien_dk}">
+                        <label class="col-sm-2 control-label" for="textinput">Đính kèm</label>
+                        
+
+                        <div class="col-sm-4" style="display:{hien_dk}">
+                          <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+         
+          <th>Tên file đính kèm</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- BEGIN: file_dk -->
+        <tr id="hien_{row_dk.id}" class='tr-dk'>
+          <td> <a href="{portalurl}/images/Image/{row_dk.dk_file}">{row_dk.dk_file}</a></td>
+          <td> <a style="display:{hien_dk}" onclick="xoa_dk('{row_dk.id}','_vatthe_dinhkem')" href="javascript:void(0)" class="btn btn-danger btn-sm">Xóa đính kèm</a></td>
+        </tr>
+                            <!-- END: file_dk -->
+                       </tbody>
+                     </table>
+                            </div>
+                            </span>
+                                <span>
+                        <label class="col-sm-2 control-label" for="textinput">File đính kèm</label>
+                       
+
+                        <div class="col-sm-4">
+                           <div class="col-sm-4">
+                           <input name="dinhkem[]" id="files_dk" type="file" multiple="multiple" /> 
+                        </div>
+                        </div>
+                        </span>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="col-sm-2 control-label"></label>
+                                <div class="col-sm-4">
+                                    <h4>Nội dung chi tiết</h4>
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="col-sm-2 control-label"> </label>
+                                <div class="col-sm-10">
+                                    <textarea class="ckeditor" cols="80" id="editor1" name="noidung" id="noidung" rows="10">
+                                        {row.noidung}
+                                    </textarea>
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="col-sm-2 control-label"></label>
+                                <div class="col-sm-4">
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <div class=" text-center">
+                                    <input name="Update_finsh" class="btn btn-primary btn-sm" type="submit" value="Tiếp tục" onclick="return ValidateForm()" />
+                                    <button type="reset" class="btn btn-default btn-sm">Nhập lại</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <!--end form nhập-->
+        </div>
+        <div class="clear"></div>
+        <input type="hidden" value="{portalurl}" id="portalurl" />
+    </div>
+</div>
+</div>
+</div>
+</div>
+<script language="javascript" type="text/javascript">
+function xoa_dk(id, table) {
+    var portalurl = $("#portalurl").val();
+    var strURL = portalurl + "/admin.php?op=Delete_dinhkem_cv&id=" + id + '&table=' + table;
+
+    var req = getXMLHTTP();
+
+    if (req) {
+
+        req.onreadystatechange = function() {
+            if (req.readyState == 4) {
+                // only if "OK"
+                if (req.status == 200) {
+                    $("#hien_" + id).html("");
+                    //document.getElementById('ds_cv_fins').innerHTML=req.responseText;         
+                } else {
+                    alert("There was a problem while using XMLHTTP:\n" + req.statusText);
+                }
+            }
+        }
+        req.open("GET", strURL, true);
+        req.send(null);
+    }
+
+}
+
+function getXMLHTTP() { //fuction to return the xml http object
+        var xmlhttp = false;
+        try {
+            xmlhttp = new XMLHttpRequest();
+        } catch (e) {
+            try {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            } catch (e) {
+                try {
+                    xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e1) {
+                    xmlhttp = false;
+                }
+            }
+        }
+
+        return xmlhttp;
+    }
+    //$(".btn-delete-all").click(function(){
+    //CKEDITOR.instances['content'].setData('');
+    //CKEDITOR.instances['editor1'].setData('<span></span>');
+    //var tbl = $(".cke_editable").html();
+    //alert(tbl);
+
+//});
+</script>
+<!-- BEGIN: MAIN -->

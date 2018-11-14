@@ -1,0 +1,97 @@
+<!-- BEGIN: MAIN -->
+<script type="text/javascript" src="{portalurl}/js/jquery-1.6.min.js"></script>
+
+<script type="text/javascript" src="{portalurl}/js/js_chung.js"></script>
+<LINK REL="StyleSheet" HREF="{portalurl}/css/style_paginate.css" TYPE="text/css">
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper">
+                <div class=" col_right">
+                    <div class="url_top">
+                        <a href="{portalurl}/admin"><strong>Trang chủ</strong> <img src="{portalurl}/images/caret-r.gif" border="0"  /></a><a href="{portalurl}/co-cau-to-chuc-phong"><strong>Thêm thôn</strong> </a>  
+                   
+                   <div style="float:right; padding-top:1px;">
+                   
+                     <a href="javascript:window.history.back();"><img src="{portalurl}/images/arrow_left.gif" border="0"  /> Trở lại&nbsp; </a></div>
+                    </div>
+                    <div class=" col-xs-12  ">
+
+            
+            
+           <form action="" method="post" enctype="multipart/form-data">
+ <input type="hidden" value="{pid}" name="pid"  />
+     <table width="98%" align="center" cellpadding="5" bordercolor="#B2DAEE" border="0" style=" margin-top:20px; font-size:12px;border-collapse: collapse;">
+  
+ 
+  
+  <tr>
+    <td>&nbsp;<strong>Tiêu đề <span id="danh_dau">*</span></strong></td>
+    <td>&nbsp;<input style="width:300px" name="name" value="{name}" class="input_text" type="text" /></td>
+  </tr>
+  
+   <tr>
+    <td>&nbsp;<strong>Thuộc nhóm <span id="danh_dau">*</span> </strong></td>
+    <td>&nbsp;
+    
+    
+        
+    <select class="input_text" name="id_xa" >
+    <option value="">Lựa chọn</option>
+    
+   {select_xathon}
+    </select>
+     </td>
+  </tr>
+  
+   
+  <tr>
+    <td>&nbsp;<strong>Số điện thoại</strong></td>
+    <td>&nbsp;<input name="phone" value="{phone}" class="input_text" type="text" /></td>
+  </tr>
+ 
+   <tr>
+    <td>&nbsp;<strong>STT</strong></td>
+    <td>&nbsp;
+    
+    <select style="width:80px" class="input_text" name="stt">
+    
+     <!-- BEGIN: stt_ht -->
+		{stt_pr}
+    <!-- END: stt_ht -->
+    
+    </select></td>
+  </tr>
+  
+  <tr>
+    <td colspan="2" align="left" style="font-size:12px; color:red">&nbsp;* Trường hợp bắt buộc không bỏ trống</td>
+   
+  </tr>
+  
+  
+  <tr>
+    <td colspan="2" align="center"><input onClick="return ValidateForm_phong()" name="Update_phong" type="submit" class="bot" value="Hoàn thành" />&nbsp;
+    
+     
+     
+    
+    </td>
+   
+  </tr>
+</table>
+</form>
+
+                       
+
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+TR {
+    border-bottom: 0px solid #ddd;
+   
+}
+</style>
+<!-- BEGIN: MAIN -->

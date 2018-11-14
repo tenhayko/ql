@@ -1,0 +1,104 @@
+<!-- BEGIN: MAIN -->
+
+
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper"
+     xmlns="http://www.w3.org/1999/html">
+    <div class=" col_right">
+        <div class="url_top">
+            <a href="{portalurl}/admin"><strong>Trang chủ</strong> <img src="{portalurl}/images/caret-r.gif"
+                                                                        border="0"/></a><strong>Đặc điểm lịch sử bản thân</strong>
+
+            <div style="float:right; padding-top:1px;"><img src="{portalurl}/images/arrow_left.gif" border="0"/><a
+                    href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
+        </div>
+        <div style="margin-top: 10px" class=" col-xs-9  ">
+            <div><center><h4 style="font-weight: bold">ĐẶC ĐIỂM LỊCH SỬ BẢN THÂN<h4></center></div>
+            <form action="" name="form1" id="form1" method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
+                <input type="hidden" value="{pid}" name="pid">
+                <input type="hidden" value="{ccid}" name="ccid">
+                <div>
+                    <!--<fieldset class="scheduler-border">-->
+
+                    <table class="table">
+                        <tr>
+                            <td width="40%"><b>- (1) Khai rõ: bị băt, bị tù (từ ngày tháng năm nào đến ngày tháng năm nào, ở dâu), đã khai báo cho ai, những vấn đề gì? Bản thân có làm việc trong chế độ cũ (cơ quan, đơn vị nào, địa điểm, chức danh, chức vụ, thời gian làm việc ...)</b>:</td>
+                            <td width="60%"><textarea style="height: 60px; width: 100%" name="dacdiem_1" class="w100">{dacdiem_1}</textarea></td>
+                        </tr>
+                       <!-- <tr>
+                            <td colspan="2"><div style="border-bottom: 1px dotted #ccc"></div></td>
+                        </tr>-->
+                        <tr>
+                            <td width="40%"><b>- (2) Tham gia hoặc có quan hệ với các tổ chức chính trị, kinh tế, xã hội nào ở nước ngoài (làm gì, tổ chức nào, đặt trụ sở ở đâu ...?)</b>:</td>
+                            <td width="60%"><textarea style="height: 60px; width: 100%" name="dacdiem_2" class="w100">{dacdiem_2}</textarea></td>
+                        </tr>
+                        <tr>
+                            <td width="40%"><b>- (3) Có thân nhân (Cha, Mẹ, Vợ, Chồng, con, anh chị em ruột) ở nước ngoài (làm gì, địa chỉ)?</b>:</td>
+                            <td width="60%"><textarea style="height: 60px; width: 100%" name="dacdiem_3" class="w100">{dacdiem_3}</textarea></td>
+                        </tr>
+                    </table>
+                    <center style="margin-top: 10px"><input  name="Dk_banthan" type="submit" onClick="return ValidateForm()" class="btn btn-sm btn-primary" value="Hoàn thành" /> <input name="" type="reset" class="btn btn-sm btn-primary" value="Nhập lại" /></center>
+
+                    <div class="clear"></div>
+
+                </div>
+                <div class="clear"></div>
+
+
+            </form>
+
+        </div>
+        <!--_________________________________________-->
+        <!--_________________________________________-->
+
+
+        <div class="col-xs-3">
+
+            <div class="note">
+                <ul>
+                    {Fun_menu}
+                </ul>
+            </div>
+
+
+            <div class="clear"></div>
+
+        </div>
+        <div class="clear"></div>
+        <!--_________________________________________-->
+        <div>
+            <table border="1px"  class="show_daotao" bordercolor="#ccc" cellpadding="0px" cellspacing="0px">
+                <tr class="title_table">
+                    <th width="5%">STT</th>
+                    <th width="30%">(1)</th>
+                    <th width="30%">(2)</th>
+                    <th width="30%">(3)</th>
+                    <th width="5%">Sửa</th>
+                </tr>
+                <!-- BEGIN: show_table -->
+                <tr>
+                    <td>{t}</td>
+                    <td>{dacdiem_1_t}</td>
+                    <td>{dacdiem_2_t}</td>
+                    <td>{dacdiem_3_t}</td>
+                    <td><a href="{portalurl}/admin.php?op=Add_DK_lichsubanthan&ccid={ccid}&pid={id_t}"><i class="fa fa-cogs"></i> Sửa</a></td>
+                </tr>
+                <!-- END: show_table -->
+
+            </table>
+        </div>
+        <div class="clear"></div>
+</div>
+</div>
+
+<iframe width=199 height=178 name="gToday:normal:agenda.js" id="gToday:normal:agenda.js"
+        src="{portalurl}/WeekPicker/ipopeng.htm" scrolling="no" frameborder="0"
+        style="visibility:visible; z-index:999; position:absolute; top:-500px; left:-500px;">
+    <iframe width=188 height=26 name="gToday:datetime:agenda.js:gfPop5:plugins_time.js"
+            id="gToday:datetime:agenda.js:gfPop5:plugins_time.js" src="{portalurl}/WeekPicker/datetime_ipopeng.htm"
+            scrolling="no" frameborder="0"
+            style="visibility:visible; z-index:999; position:absolute; left:-500px; top:0px;">picker4
+    </iframe>
+</iframe>
+
+        </div>
+<!-- END: MAIN -->

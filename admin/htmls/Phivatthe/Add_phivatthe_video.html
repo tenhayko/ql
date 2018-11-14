@@ -1,0 +1,184 @@
+<!-- BEGIN: MAIN -->
+<link type="text/css" rel="stylesheet" href="{portalurl}/css/cacbuoc.css" />
+<link type="text/css" rel="stylesheet" href="{portalurl}/js/show_anh/css/blueimp-gallery.min.css" />
+<link type="text/css" rel="stylesheet" href="{portalurl}/js/show_anh/css/bootstrap-image-gallery.css" />
+ 
+<!-- Bootstrap JS is not required, but included for the responsive demo navigation and button states -->
+<script src="{portalurl}/js/show_anh/js/jquery.min.js"></script>
+<script src="{portalurl}/js/show_anh/js/jquery.blueimp-gallery.min.js"></script>
+<script src="{portalurl}/js/show_anh/js/bootstrap-image-gallery.js"></script>
+<script src="{portalurl}/js/show_anh/js/demo.js"></script>
+
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper">
+    <div class=" col_right">
+        <div class="url_top">
+            <a href="{portalurl}/admin"><strong>Trang chủ</strong> </a> <i class="fa fa-angle-double-right"></i> <strong>Thêm thông tin phi vật thể</strong>
+
+            <div style="float:right; padding-top:1px;"><img src="{portalurl}/images/arrow_left.gif" border="0"/><a
+                    href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
+        </div>
+        <div class=" data ">
+
+            <!--bat dau nhap form-->
+            
+<div class="row" style="width:100%; margin-top:20px">
+        <div class="col-md-12 " >
+          <div class="wizard" style="margin-left:2%;"><a><span class="badge">1</span>Nhập thông tin cơ bản</a>
+        <a><span class="badge">2</span> upload hình ảnh</a>
+        <a class="current"><span class="badge badge-inverse">3</span> upload video</a> </div>
+          <form method="post" action="" enctype="multipart/form-data" class="form-horizontal" >
+            <div id = "khunghinh">
+              <div id="pad">
+                <div class="form-group form-group-sm" style="margin-top:-30px;">
+                  <div class="col-md-6 col-md-offset-3">
+                    <label class="col-sm-2 control-label">Video</label>
+                    <div class="col-sm-4">
+                      <input name="video" id="video" type="file" /> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group form-group-sm" style="margin-top:-30px;">
+                <div class=" text-center">
+                  <input type="submit"  class="btn btn-primary btn-sm" name="ok_num" value="Tải lên" />
+                  </div>
+              </div>
+              <div class="form-group form-group-sm">
+                <div class=" text-center"> <a href="admin.php?op=Ds_phivatthe">
+                  <img src="{portalurl}/images/phivatthe.png" />
+                  </a> </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div> &nbsp; </div>
+        <div> </div>
+        <form method="post" action="" enctype="multipart/form-data" class="form-horizontal"  name="frmList" id="frmList" > 
+        <div class="col-md-12" style="display:{hienthi_video};">
+          <div class="col-md-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h1 class="panel-title"><strong>Video của phi vật thể</strong></h1>
+              </div>
+              <div class="panel-body"> 
+                <div >
+<span style="display:{hien_video}">
+   
+    
+     <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".bs-example-modal-lg">Xem video</button>
+<input name="xoa_video" class="btn btn-primary btn-sm" type="submit" value="Xóa" style="display:{hienthi_video}"/>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+  <div class="modal-content">
+<div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">&nbsp;</h4>
+                </div>    
+                <div class="modal-content">
+     <object type="application/x-shockwave-flash" data="{portalurl}/images/Flash/player.swf" width="100%" height="100%">
+                                <param name="flashvars" value="file={portalurl}/{video}"/>
+                                <param name="quality" value="high" />
+                                <param name="name" value="hna-video" />
+                                <param name="bgcolor" value="#FFFFFF" />
+                                <param name="wmode" value="opaque" />
+                                <param name="allowscriptaccess" value="always" />
+                                <param name="allowfullscreen" value="true" />
+                        </object>  
+    </div>
+     <div class="modal-footer">
+            <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Đóng</button>
+          </div>
+  </div>
+</div>
+  </div>
+</span>  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </form>
+      </div>
+
+    
+           
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+
+            <!--end form nhập-->
+            
+            
+
+
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script language="javascript" type="text/javascript">
+function popitup(url) {
+	newwindow=window.open(url,'name','height=500,width=720,scrollbars=yes');
+	if (window.focus) {newwindow.focus()}
+	return false;
+}
+function chkallClick(o) {
+  	var form = document.frmList;
+	for (var i = 0; i < form.elements.length; i++) {
+		if (form.elements[i].type == "checkbox" && form.elements[i].name!="checkall") {
+			form.elements[i].checked = document.frmList.checkall.checked;
+		}
+	}
+}
+function xoa_anh(){
+	var strChoices = "";
+  var objCBarray = document.getElementById('frmList')['checkbox[]'];
+  for (i = 0; i < objCBarray.length; i++) {
+    if (objCBarray[i].checked) {
+      strChoices +=objCBarray[i].value+', ';
+    }
+  }
+  if (strChoices.length > 0) {
+    var strMessage = strChoices;
+  } else {
+    alert("Bạn phải chọn một ảnh mới xóa được.");
+  }
+}
+$(document).ready(function() {
+	$("#dong_vieo").hide();
+	$("#dongvideo").hide();
+	$("#xemvideo").show();
+	$("#xemvideo").click(function() {
+		$("#dong_vieo").show();
+		$("#dongvideo").show();
+		$("#xemvideo").hide();
+	});
+	$("#dongvideo").click(function() {
+		$("#dong_vieo").hide();
+		$("#dongvideo").hide();
+		$("#xemvideo").show();
+	});
+});
+function danh_sachvt(){
+	Header("Location: admin.php?op=Ds_vatthe");
+}
+</script>
+<style>
+#khunghinh {
+	border:1px solid #999;
+	height:atuo;
+	width:500px;
+	margin:0 auto;
+	padding:0 auto;
+	margin-top:40px;
+	border-radius: 10px;
+}
+#pad {
+	padding: 50px 0 50px 0;
+}
+<!-- BEGIN: MAIN -->

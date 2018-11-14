@@ -1,0 +1,65 @@
+div.sdmenu {
+	width: 220px;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	padding-bottom: 10px;
+	color: #111111;
+	cursor: pointer;
+	height:400px;
+	overflow:scroll;
+}
+div.sdmenu div {
+	background-color: transparent;
+	background: url(title.png) ;
+	color: #111111;
+	cursor: pointer;
+	overflow: hidden;
+}
+div.sdmenu div:first-child {
+	background-color: transparent;
+	background: url(title.png) ;
+	color: #111111;
+	cursor: pointer;
+	overflow: hidden;
+}
+div.sdmenu div.collapsed {
+	height: 36px;
+}
+div.sdmenu div span {
+	display: block;
+	padding: 5px 25px 5px 3px;
+	font-weight: none;
+	color: #111111;
+	background: url(expanded.png) no-repeat 10px right;
+	cursor: pointer;
+	border-bottom: 1px solid #ddd;
+	background-position-y: 2px;
+	background-position-x: 200px;
+}
+div.sdmenu div.collapsed span {
+	display: block;
+	padding: 5px 25px 5px 3px;
+	font-weight: none;
+	color: #111111;
+	background: url(collapsed.png) no-repeat 10px right;
+	cursor: pointer;
+	border-bottom: 1px solid #ddd;
+	background-position-y: 2px;
+	background-position-x: 200px;
+}
+div.sdmenu div a {
+	padding: 5px 10px;
+	background: #ffffff;
+	display: block;
+	border-bottom: 1px solid #ddd;
+	color: #066;
+	TEXT-DECORATION: none;
+}
+div.sdmenu div a.current {
+	background : #F1F1F2;
+}
+div.sdmenu div a:hover {
+	background : #F1F1F2 url(linkarrow.gif) no-repeat right center;
+	color: #111111;
+	text-decoration: none;
+}

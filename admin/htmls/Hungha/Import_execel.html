@@ -1,0 +1,179 @@
+<!-- BEGIN: MAIN -->
+
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper">
+  <div class=" col_right">
+    <div class="url_top"> <a href="{portalurl}/admin"><strong>Trang chủ</strong> </a> <i class="fa fa-angle-double-right"></i> <strong>{title}</strong>
+      <div style="float:right; padding-top:1px;"><img src="{portalurl}/images/arrow_left.gif" border="0"/><a
+                    href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
+    </div>
+    <div class=" data ">
+      <div class="row" style="width:100%; margin-top:20px">
+        <div class="col-md-12 " style="width:100%; margin-top:20px">
+          <form method="post" action="" enctype="multipart/form-data" class="form-horizontal" id="frm_phi" name="frm_phi">
+            <div class = "khunghinh">
+              <div id="pad">
+                <div class="form-group form-group-sm" style="margin-top:10px;">
+                  <label class="col-sm-2 control-label">Bắt đầu</label>
+                  <div class="col-sm-2">
+                    <input type="text" name="datastartfrom" id="batdau" placeholder="Bắt đầu" class="form-control" value="9">
+                  </div>
+                  <label class="col-sm-2 control-label"></label>
+                  <div class="col-sm-8"> <span  class ="canhbao">Dòng đầu tiên có dữ liệu excel cần tính</span> </div>
+                </div>
+                <div class="form-group form-group-sm">
+                  <label class="col-sm-2 control-label">Chọn file</label>
+                  <div class="col-sm-4">
+                    <input name="ufile" type="file" id="ufile"/>
+                  </div>
+                </div>
+                <div class="form-group form-group-sm">
+                  <label class="col-sm-2 control-label"></label>
+                  <div class="col-sm-4"> <span  class ="canhbao">Chỉ đưa file excel 2003</span> </div>
+                </div>
+              </div>
+              <div class="form-group form-group-sm">
+                <table width="90%" align="center" cellpadding="1" bordercolor="#B2DAEE" border="1" style=" margin-top:20px;border-collapse: collapse; font-weight:bold" class="table_chiphi">
+                  <tr>
+                    <td colspan="2">TÊN DI TÍCH</td>
+                    <td>{bien1}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">THÔN</td>
+                    <td>{bien2}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Xã</td>
+                    <td>{bien3}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Huyện</td>
+                    <td>{bien4}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">THIẾT CHẾ</td>
+                    <td>{bien5}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">CẤP XẾP HẠNG</td>
+                    <td>{bien6}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">LOẠI HÌNH</td>
+                    <td>{bien7}</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="3">KIẾN TRÚC</td>
+                    <td>Số tòa</td>
+                    <td>{bien8}</td>
+                  </tr>
+                  <tr>
+                    <td>Số gian</td>
+                    <td>{bien9}</td>
+                  </tr>
+                  <tr>
+                    <td>Niên đại</td>
+                    <td>{bien10}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">TÓM TẮT GIÁ TRỊ LỊCH SỬ</td>
+                    <td>{bien11}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">THỜI GIAN LỄ HỘI</td>
+                    <td>{bien12}</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2">ĐẤT ĐAI</td>
+                    <td>Diện tích đất</td>
+                    <td>{bien13}</td>
+                  </tr>
+                  <tr>
+                    <td>Diện tích xây dựng (m)</td>
+                    <td>{bien14}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">NHỮNG HIỆN VẬT TIÊU BIỂU</td>
+                    <td>{bien15}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">QUÁ TRÌNH TU BỔ TÔN TẠO</td>
+                    <td>{bien16}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">TÌNH TRẠNG BẢO QUẢN</td>
+                    <td>{bien17}</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2">HƯỚNG QUY HOẠCH BẢO TỒN</td>
+                    <td>Xếp hạng</td>
+                    <td>{bien18}</td>
+                  </tr>
+                  <tr>
+                    <td>Tu sửa hoặc mở rộng</td>
+                    <td>{bien19}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">GHI CHÚ</td>
+                    <td>{bien20}</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="form-group form-group-sm" >
+                <div class=" text-center">
+                  <input type="submit" value="Import dữ liệu" class="btn btn-primary btn-sm"  name="Update_finsh" onclick="return import1018()"/>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!--bat dau nhap form--> 
+      
+      <!-- /.row --> 
+      
+      <!--end form nhập--> 
+      
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<script>
+function import1018(){
+	//alert(1);
+	var chicuc = $("#chicuc").val();
+	var quy = $("#quy").val();
+	var nam = $("#nam").val();
+	var lan = $("#lan").val();
+	var ufile = $("#ufile").val();
+	var ext = ufile.substring(ufile.lastIndexOf('.') + 1);
+	if(chicuc == ""){
+		alert("Chi cục không được bỏ trống");
+		$("#chicuc").focus();
+		return false;
+	}else if(quy == ""){
+		alert("Quý được bỏ trống");
+		$("#quy").focus();
+		return false;
+	}else if(nam == ""){
+		alert("Năm được bỏ trống");
+		$("#nam").focus();
+		return false;
+	}else if(lan == ""){
+		alert("Phải chọn là lần nào?");
+		$("#lan").focus();
+		return false;
+	}else if(ufile == ""){
+		alert("Phải đưa file excel 2003 lên");
+		return false;
+	}else if(ext != 'xls'){
+		alert("File đưa lên phải là excel 2003");
+		return false;
+	}else
+	return true;
+}
+</script> 
+
+<!-- BEGIN: MAIN -->

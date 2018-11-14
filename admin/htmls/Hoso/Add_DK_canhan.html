@@ -1,0 +1,177 @@
+<!-- BEGIN: MAIN -->
+
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper">
+                <div class=" col_right">
+                    <div class="url_top">
+                        <a href="{portalurl}/admin"><strong>Trang chủ</strong> <img src="{portalurl}/images/caret-r.gif" border="0"  /></a><strong>Thêm cán bộ viên chức</strong>
+                   
+                   <div style="float:right; padding-top:1px;"><img src="{portalurl}/images/arrow_left.gif" border="0"  />
+                   
+                   
+                     <a href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
+                    </div>
+                    <div class=" col-xs-12  ">
+
+            
+       <form action="" name="form1" id="form1" method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
+    <input type="hidden" value="{ccid}" name="ccid">
+
+    <div>
+        <h4 style="text-align: center; font-weight: bold">SƠ YẾU LÝ LỊCH CÁN BỘ, CÔNG CHỨC</h4>
+    </div>
+    <div>
+       <!-- <fieldset class="scheduler-border">-->
+            <table class="table table_anhdaidien">
+                <tr>
+                    <td width="30%"><b>Họ và tên khai sinh</b><font style="color: red">*</font></td>
+                    <td width="65%"><input type="text" id="name_khaisinh" value="{name_khaisinh}" name="name_khaisinh" class="w100"></td>
+                    <td width="5%"></td>
+                </tr>
+                <tr>
+                    <td width=""><b>Tên gọi khác</b>:</td>
+                    <td width=""><input type="text" id="name_khac" value="{name_khac}" name="name_khac" class="w100"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><b>Ngày sinh</b><font style="color: red">*</font></td>
+                    <td>
+                        <input type="text" class="w100" name="date_sinh" value="{date_sinh}" id="date_sinh" style="width: 88%;float: left">
+                        <a href="javascript:void(0)" style="display: block; width: 10%; float: left"
+                           onclick="if(self.gfPop)gfPop.fPopCalendar(document.form1.date_sinh);return false;"
+                           HIDEFOCUS><img name="popcal" align="absmiddle" src="{portalurl}/images/admin/calbtn.gif"
+                                          width="34" height="22" border="0" alt=""></a>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td width="15%"><b>Giới tính</b><font style="color: red">*</font></td>
+                    <td  width="35%">
+                        <label>
+                            <input type="radio" name="gioitinh" value="Nam"  {checked1}> Nam
+                        </label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>
+                        <input type="radio" name="gioitinh" value="Nữ" {checked2}> Nữ
+                    </label>
+                </tr>
+
+                <tr>
+                    <td><b>Nơi sinh</b>:</td>
+                    <td><textarea style="height: 50px; width: 100%" name="noisinh" class="w100">{noisinh}</textarea></td>
+                </tr>
+
+
+                <tr style="">
+                    <td><b>Quê quán</b>:</td>
+                    <td><textarea style="height: 50px; width: 100%" name="quequan" class="w100">{quequan}</textarea></td>
+                </tr>
+
+
+
+                <tr class="pading_top_tr">
+                    <td class="pading_top_tr" width=""><b>Dân tộc</b>:</td>
+                    <td class="pading_top_tr" width="">
+                        <select name="dantoc"  class="w100">
+                            <!-- BEGIN: dantoc -->
+                            <option value="{row.name}" {selected}>{row.name}</option>
+                            <!-- END: dantoc -->
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td  width=""><b>Tôn giáo</b>:</td>
+                    <td  width="">
+                        <select name="tongiao"  class="w100">
+                            <!-- BEGIN: tongiao -->
+                            <option value="{row.name}" {selected}>{row.name}</option>
+                            <!-- END: tongiao -->
+                        </select>
+                    </td>
+                </tr>
+
+            </table>
+
+            <div class="khung_anhdaidien_ttcn">
+                <div>
+                    <img style=" width:100px" src="{portalurl}/{image}" title="anh dai dien" alt="anh dai dien">
+
+                </div>
+                <input type="file" name="image" value="{image}">
+                
+                 <div class="note">
+                 <ul>
+                 {Fun_menu}
+                 </ul>
+                 </div>
+                 
+                 
+                 
+            </div>
+            <div class="clear"></div>
+            <div style="border-bottom:1px solid #ccc; margin: 13px 0px;"></div>
+            <table class="table">
+                <tr>
+                    <td width="21%"><b>Nơi đăng ký hộ khẩu thường trú</b>:</td>
+                    <td width="34%"><textarea style="height: 60px; width: 100%" name="dangky_hokhau" class="w100">{dangky_hokhau}</textarea></td>
+                    <td><b>Ngày tuyển dụng</b>:</td>
+                    <td>
+                        <input type="text" class="w100" name="date_td" value="{date_td}" id="date_td" style="width: 70%;float: left">
+                        <a href="javascript:void(0)" style="display: block; width: 10%; float: left"
+                           onclick="if(self.gfPop)gfPop.fPopCalendar(document.form1.date_td);return false;"
+                           HIDEFOCUS><img name="popcal" align="absmiddle" src="{portalurl}/images/admin/calbtn.gif"
+                                          width="34" height="22" border="0" alt=""></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Nơi ở hiện nay</b>:</td>
+                    <td><textarea style="height: 60px; width: 100%" name="noi_o_hiennay" class="w100">{noi_o_hiennay}</textarea></td>
+                    <td  width=""><b>Cơ quan tuyển dụng</b>:</td>
+                    <td>
+                        <select name="coquan_td" style="width: 85%">
+                                <!-- BEGIN: coquan -->
+                                <option value="{row.name}" {selected} >{row.name}</option>
+                                <!-- END: coquan -->
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Nghề nghiệp khi được tuyển dụng</b>:</td>
+                    <td class="pading_top_tr" colspan="3"><input type="text" value="{nghe_td}" name="nghe_td" class="w100"></td>
+
+                </tr>
+
+
+
+
+
+                <tr>
+                    <td><b>Chức vụ (chức danh) hiện tại</b>:</td>
+                    <td><select name="chucdanh" style="width: 85%">
+                        <!-- BEGIN: chuc_danh -->
+                        <option value="{row.name}" {selected} >{row.name}</option>
+                        <!-- END: chuc_danh -->
+                    </select></td>
+                </tr>
+
+
+
+            </table>
+            <center style="margin-top: 10px"><input  name="Dk_canhan" type="submit" onClick="return ValidateForm()" class="btn btn-sm btn-primary" value="Hoàn thành" /> <input name="" type="reset" class="btn btn-sm btn-primary" value="Nhập lại" /></center>
+        <!--</fieldset>-->
+    </div>
+
+    </form>
+
+                    </div>
+
+                   <div class="clear"></div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<iframe width=199 height=178 name="gToday:normal:agenda.js" id="gToday:normal:agenda.js" src="{portalurl}/WeekPicker/ipopeng.htm" scrolling="no" frameborder="0" style="visibility:visible; z-index:999; position:absolute; top:-500px; left:-500px;">
+<iframe width=188 height=26 name="gToday:datetime:agenda.js:gfPop5:plugins_time.js" id="gToday:datetime:agenda.js:gfPop5:plugins_time.js" src="{portalurl}/WeekPicker/datetime_ipopeng.htm" scrolling="no" frameborder="0" style="visibility:visible; z-index:999; position:absolute; left:-500px; top:0px;">picker4</iframe>
+</iframe> 
+
+
+<!-- END: MAIN -->

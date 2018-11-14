@@ -1,0 +1,27 @@
+<!-- BEGIN: MAIN -->
+ <form action="" method="post" enctype="multipart/form-data">
+ <!-- <span style="color:#00C; font-weight:bold;">{msg}</span>-->
+<table class="table-bordered table"  style="display:{hien_ketqua}; margin-top:20px;">
+                <tr class="text-center" bgcolor="#f5f5f5">
+                    <th style="width: 5%" class="text-center"><input type="submit" class="btn btn-primary btn-xs" value="Xóa" name="Del_vt"></th>
+                    <th class="text-center">STT</th>
+                    <th class="text-center">Tên di sản</th>
+                    <th class="text-center">Địa chỉ</th>
+                   <th class="text-center">Sửa</th>
+                </tr>
+                
+                
+                <!-- BEGIN: vatthe -->
+                <tr >
+                    <td align="center"><input name="xoa_vatthe" type="checkbox" value="{row_vatthe.id}"></td>
+                  <td align="center">{stt}</td>
+                  <td ><a href="admin.php?op=View_dacsac&pid={row_vatthe.id}">{row_vatthe.name_vt}</a></td>
+                  <td >{huyen_xa}</td>
+                  <td align="center"><a href="admin.php?op=Add_dacsac&pid={row_vatthe.id}"  title="Sửa di sản đặc sắc" ><img src="{portalurl}/images/edit.gif"  border="0" /></a></td>
+                </tr>
+                <!-- END: vatthe -->
+               {pagination}
+            </table>
+           
+</form>
+<!-- END: MAIN -->

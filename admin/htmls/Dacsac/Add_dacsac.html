@@ -1,0 +1,195 @@
+<!-- BEGIN: MAIN -->
+
+
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper">
+    <div class=" col_right">
+        <div class="url_top">
+            <a href="{portalurl}/admin"><strong>Trang chủ</strong> </a> <i class="fa fa-angle-double-right"></i> <strong>Thêm thông tin đặc sắc</strong>
+
+            <div style="float:right; padding-top:1px;"><img src="{portalurl}/images/arrow_left.gif" border="0"/><a
+                    href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
+        </div>
+        <div class=" data ">
+
+            <!--bat dau nhap form-->
+            
+
+
+    <div class="row" style="width:96%; margin-top:20px">
+        <div class="col-md-12 ">
+            
+            <form class="form-horizontal" action="{portalurl}/admin.php?op=Add_dacsac"  method="post" enctype="multipart/form-data">
+            <input type="hidden" value="{pid}" name="pid" id="pid"/>
+                <fieldset>
+
+                    <!-- Form Name -->
+                    
+
+
+
+                    <!-- Text input-->
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="textinput">Tên di sản</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="name_vt" placeholder="Tên di sản" class="form-control" value="{name_vt}">
+                        </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="textinput">Địa chỉ</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="diachi" placeholder="Địa chỉ" class="form-control" value="{diachi}">
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="form-group form-group-sm ">
+                        <label class="col-sm-2 control-label" for="textinput">Huyện/TP</label>
+                        <div class="col-sm-4">
+                            {huyen}
+                        </div>
+
+                        <label class="col-sm-2 control-label" for="textinput">Xã/Phường</label>
+                        <div class="col-sm-4">
+                            <div id="statediv">
+
+                                          <select name="" class="form-control" id="add_xa">
+                                            {phong_select}
+                                        </select>
+                                        <select name="xa" class="form-control" id="edit_xa">
+                                        	<option value="">Lựa chọn</option>
+                                            {xa_editSelected}
+                                        </select>
+                                    </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Text input-->
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label"  for="textinput">Ý nghĩa lịch sử</label>
+                        <div class="col-sm-10">
+                             <textarea class="ckeditor" cols="80" id="editor1" name="noidung" rows="10">
+                             	{noidung}
+                            </textarea>
+                        </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="textinput">Đính kèm</label>
+                        <div class="col-sm-4">
+                            <input type="file" class="form-control"  name="file_dk">
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <div class=" text-center">
+                          <input name="Update_finsh" class="btn btn-primary btn-sm" type="submit" value="Hoàn thành" />
+                                <button type="reset" class="btn btn-default btn-sm">Nhập lại</button>
+
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+            
+            
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+
+            <!--end form nhập-->
+            
+            
+
+
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script language = "Javascript">
+$(document).ready(function(){
+	var pid = $("#pid").val();
+	if(pid == ""){
+		$("#add_xa").show();
+		$("#edit_xa").hide();
+	}else{
+		$("#add_xa").hide();
+		$("#edit_xa").show();
+	}
+});
+
+function ValidateForm(){
+
+	
+	//nhap dia chi
+	
+	if (document.form1.date_gv.value == ""){
+		alert("Nhập ngày giao việc")
+		document.form1.date_gv.focus()
+		return false
+	}
+	
+	//nhap dien thoai
+	if (document.form1.tieude_cv.value == ""){
+		alert("Nhập tiêu đề")
+		document.form1.tieude_cv.focus()
+		return false
+	}
+	
+	
+	if (document.form1.han_xl.value == ""){
+		alert("Nhập hạn xử lý")
+		document.form1.han_xl.focus()
+		return false
+	}
+	
+	
+	
+
+var chks = document.getElementsByName('canbo_xl[]');
+var hasChecked = false;
+for (var i = 0; i < chks.length; i++)
+{
+if (chks[i].checked)
+{
+hasChecked = true;
+break;
+}
+}
+if (hasChecked == false)
+{
+alert("Mời bạn chọn cán bộ.");
+return false;
+}
+return true;
+
+
+
+	//tuong tu voi cac ham khac
+	
+	if ((emailID.value==null)||(emailID.value=="")){
+		alert("Nhap dia chi hom thu")
+		emailID.focus()
+		return false
+	}
+	if (echeck(emailID.value)==false){
+		emailID.value=""
+		emailID.focus()
+		return false
+	}
+	return true
+ }
+</script>
+
+
+<!-- BEGIN: MAIN -->

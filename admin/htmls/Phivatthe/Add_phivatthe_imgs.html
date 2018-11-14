@@ -1,0 +1,174 @@
+<!-- BEGIN: MAIN -->
+<style>
+#khunghinh {
+	border:1px solid #999;
+	height:atuo;
+	width:500px;
+	margin:0 auto;
+	padding:0 auto;
+	margin-top:40px;
+	border-radius: 10px;
+}
+#pad {
+	padding: 50px 0 50px 0;
+}
+</style>
+<link type="text/css" rel="stylesheet" href="{portalurl}/css/cacbuoc.css" />
+
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper">
+  <div class=" col_right">
+  <div class="url_top">
+            <a href="{portalurl}/admin"><strong>Trang chủ</strong> </a> <i class="fa fa-angle-double-right"></i> <strong>Thêm thông tin phi vật thể</strong>
+
+            <div style="float:right; padding-top:1px;"><img src="{portalurl}/images/arrow_left.gif" border="0"/><a
+                    href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
+        </div>
+    <div class=" data "> 
+      
+      <!--bat dau nhap form-->
+      
+      <div class="row" style="width:100%; margin-top:20px">
+        <div class="col-md-12 " >
+          <div class="wizard" style="margin-left:2%;"> <a><span class="badge">1</span>Nhập thông tin cơ bản</a> <a class="current"><span class="badge badge-inverse">2</span> upload hình ảnh</a> <a><span class="badge">3</span> upload video</a> </div>
+          <form method="post" action="" enctype="multipart/form-data" class="form-horizontal" id="frm_phi" name="frm_phi">
+          <input type="hidden" id="pid" name="pid" value="{pid}" />
+            <div id = "khunghinh">
+              <div id="pad">
+                <div class="form-group form-group-sm" style="margin-top:-30px;">
+                  <div class="col-md-6 col-md-offset-3">
+                    <label class="col-sm-2 control-label">Ảnh</label>
+                    <div class="col-sm-4">
+                      <input name="files[]" id="files" type="file" multiple="multiple" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group form-group-sm" style="margin-top:-30px;">
+                <div class=" text-center">
+                  <input type="submit"  class="btn btn-primary btn-sm" name="ok_num" value="Tải lên" />
+                   <input type="submit"  class="btn btn-primary btn-sm" name="buoc_tiep"  value="Tải lên & tiếp tục"/>
+                  <a href="admin.php?op=Add_phivatthe_video&pid={pid}">
+                   <input type="button"  class="btn btn-primary btn-sm" name="buoc tiep"  value="Bỏ qua" />
+                  </a> </div>
+              </div>
+              <div class="form-group form-group-sm">
+                <div class=" text-center"> <a href="admin.php?op=Ds_phivatthe">
+                  <img src="{portalurl}/images/phivatthe.png" />
+                  </a> </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div> &nbsp; </div>
+        <div> </div>
+        <form method="post" action="" enctype="multipart/form-data" class="form-horizontal"  name="frmList" id="frmList" > 
+        <div class="col-md-12" style="display:{hienthi_tableAnh};">
+          <div class="col-md-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h1 class="panel-title"><strong>Ảnh của phi vật thể</strong></h1>
+              </div>
+              <div class="panel-body"> 
+                
+                <div class="col-md-2">
+                    <div class=" text-center"> <input type="checkbox" name="checkall" id="checkall"  onclick="chkallClick(this);"/></div></br></br>
+                     <div class=" text-center"><input name="xoa_anh" class="btn btn-primary btn-sm" type="submit" value="Xóa" onclick="return xoa_anh()"/></div>
+                </div>
+                <!-- BEGIN: file_anh -->
+                
+                <div class="col-md-2" >
+                  <div class="text-center">
+                    <input type="checkbox" name="checkbox[]" value="{row_anh.id}"/>
+                  </div>
+                  <img src="{portalurl}/images/Image/{row_anh.img_pvt}" width="100"  alt="{row_anh.img_pvt}" style="width:100%;border:1px solid #CCC;padding:2px; border-radius:5px; margin:5px 0 5px 0;" class="text-left"/>
+                  
+                 <div class=" text-center">{row_anh.img_vt}</div>
+                </div>
+                <!-- END: file_anh --> 
+              </div>
+            </div>
+          </div>
+        </div>
+        </form>
+      </div>
+      
+      <!-- /.col-lg-12 --> 
+    </div>
+    <!-- /.row --> 
+    
+    <!--end form nhập--> 
+    
+  </div>
+  <div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script language="javascript" type="text/javascript">
+function popitup(url) {
+	newwindow=window.open(url,'name','height=500,width=720,scrollbars=yes');
+	if (window.focus) {newwindow.focus()}
+	return false;
+}
+function chkallClick(o) {
+  	var form = document.frmList;
+	for (var i = 0; i < form.elements.length; i++) {
+		if (form.elements[i].type == "checkbox" && form.elements[i].name!="checkall") {
+			form.elements[i].checked = document.frmList.checkall.checked;
+		}
+	}
+}
+function xoa_anh(){
+	var strChoices = "";
+  var objCBarray = document.getElementById('frmList')['checkbox[]'];
+  for (i = 0; i < objCBarray.length; i++) {
+    if (objCBarray[i].checked) {
+      strChoices +=objCBarray[i].value+', ';
+    }
+  }
+  if (strChoices.length > 0) {
+    var strMessage = strChoices;
+  } else {
+    alert("Bạn phải chọn một ảnh mới xóa được.");
+  }
+}
+$(document).ready(function() {
+	$("#dong_vieo").hide();
+	$("#dongvideo").hide();
+	$("#xemvideo").show();
+	$("#xemvideo").click(function() {
+		$("#dong_vieo").show();
+		$("#dongvideo").show();
+		$("#xemvideo").hide();
+	});
+	$("#dongvideo").click(function() {
+		$("#dong_vieo").hide();
+		$("#dongvideo").hide();
+		$("#xemvideo").show();
+	});
+});
+function danh_sachvt(){
+	Header("Location: admin.php?op=Ds_vatthe");
+}
+function validate_anh(){
+	var files = $("#files").val();
+	var pids = $("#pid").val();
+	if(files == ""){
+		if (confirm('Bạn muốn bỏ qua bước này không?')) {
+			Header("Location: admin.php?op=Add_phivatthe_video&pid="+pids+"");
+    		//Header("Location: admin.php?op=Add_phivatthe_video&pid="+pids+"");
+		} else {
+			//alert('khong muon');
+			return false;
+		}
+		
+	}else{
+		//alert('co');
+		document.getElementById("frm_phi").submit();
+	}
+	
+}
+</script> 
+
+<!-- BEGIN: MAIN -->

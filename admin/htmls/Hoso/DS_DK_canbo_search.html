@@ -1,0 +1,41 @@
+<!-- BEGIN: MAIN -->
+
+
+<form name="myform" action="" method="post" enctype="multipart/form-data">
+    <div class="table_data col-xs-12">
+        <div class="row">
+            <table class="table table-striped table-bordered">
+                <tr class="th">
+                    <th ><input style="padding-top:2px; padding-bottom:2px;" class="btn-sm btn btn-primary" type="submit" onClick="return confirm('Bạn có chắc không ?');"  name="Delete" value="Xóa" /></th>
+
+                    <th >STT</th>
+                    <th >Họ và tên</th>
+                    <th>Chức vụ</th>
+                    <th>Phòng ban</th>
+                    <th>Sửa</th>
+                </tr>
+
+                <!-- BEGIN: dscanbo -->
+                <tr>
+
+                    <td align="center" class="text-center"><input type="checkbox" name="check[]" value="{row.id}" /></td>
+                    <td align="center">{stt}</td>
+                    <td class="text-center"><strong>{row.name_khaisinh}</strong></td>
+                    <td class="text-center">{row.chucdanh}</td>
+                    <td align="center">update phong ban</td>
+                    <td align="center"><a href="{portalurl}/admin.php?op=Add_DK_canhan&ccid={row.id}"><img src="images/admin/edit_x.gif"/></a></td>
+                </tr>
+                <!-- END: dscanbo -->
+
+            </table> </div>
+
+        <div class="clear"></div>
+        <div class="pagination ">
+            {pagination}
+        </div>
+
+
+    </div>
+</form>
+
+<!-- BEGIN: MAIN -->

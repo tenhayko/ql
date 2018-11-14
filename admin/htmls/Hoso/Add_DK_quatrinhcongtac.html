@@ -1,0 +1,113 @@
+<!-- BEGIN: MAIN -->
+
+
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper"
+     xmlns="http://www.w3.org/1999/html">
+    <div class=" col_right">
+        <div class="url_top">
+            <a href="{portalurl}/admin"><strong>Trang chủ</strong> <img src="{portalurl}/images/caret-r.gif"
+                                                                        border="0"/></a><strong>Quá trình công tác</strong>
+
+            <div style="float:right; padding-top:1px;"><img src="{portalurl}/images/arrow_left.gif" border="0"/><a
+                    href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
+        </div>
+        <div style="margin-top: 10px" class=" col-xs-12  ">
+            <div><center><h4 style="font-weight: bold">QUÁ TRÌNH CÔNG TÁC<h4></center></div>
+            <div class="col-xs-9">
+            <form action="" name="form1" id="form1" method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
+                <input type="hidden" value="{ccid}" name="ccid">
+                <input type="hidden" value="{pid}" name="pid">
+                <div>
+                    <!--<fieldset class="scheduler-border">-->
+
+                    <table class="table">
+                        <tr>
+                            <td width="15%"><b>Từ tháng, năm</b>:</td>
+                            <td width="20%">
+                                <input type="text" class="w100" name="date_tu" value="{date_tu}" id="daotaotu" style="width: 60%;float: left">
+                                <a href="javascript:void(0)" style="display: block; width: 10%; float: left"
+                                   onclick="if(self.gfPop)gfPop.fPopCalendar(document.form1.daotaotu);return false;"
+                                   HIDEFOCUS><img name="popcal" align="absmiddle" src="{portalurl}/images/admin/calbtn.gif"
+                                                  width="34" height="22" border="0" alt=""></a>
+                            </td>
+                            <td rowspan="2">
+                                <textarea style="height: 60px; width: 100%" name="tomtat" class="w100">{tomtat}</textarea>
+                            </td>
+                         </tr><tr>
+                            <td width="15%"><b>Đến tháng, năm</b>:</td>
+                            <td width="20%">
+                                <input type="text" class="w100" name="date_den" value="{date_den}" id="daotaoden" style="width: 60%;float: left">
+                                <a href="javascript:void(0)" style="display: block; width: 10%; float: left"
+                                   onclick="if(self.gfPop)gfPop.fPopCalendar(document.form1.daotaoden);return false;"
+                                   HIDEFOCUS><img name="popcal" align="absmiddle" src="{portalurl}/images/admin/calbtn.gif"
+                                                  width="34" height="22" border="0" alt=""></a>
+                            </td>
+                        </tr>
+
+                    </table>
+                    <center style="margin-top: 10px; margin-bottom: 15px"><input  name="Dk_quatringcongtac" type="submit" onClick="return ValidateForm()" class="btn btn-sm btn-primary" value="Hoàn thành" /> <input name="" type="reset" class="btn btn-sm btn-primary" value="Nhập lại" /></center>
+
+
+                    <!--<div style="border-bottom:1px solid #ccc; margin: 13px 0px;"></div>-->
+                    <div class="clear"></div>
+
+                    <!--</fieldset>-->
+                </div>
+                <div class="clear"></div>
+
+
+            </form>
+
+        </div>
+            <!--_________________________________________-->
+
+
+            <div class="col-xs-3 quatrinhcongtac">
+
+                <div class="note">
+                    <ul>
+                        {Fun_menu}
+                    </ul>
+                </div>
+
+
+                <div class="clear"></div>
+
+            </div>
+            <div class="clear"></div>
+            <!--_________________________________________-->
+            <div>
+                <table border="1px"  class="show_daotao" bordercolor="#ccc" cellpadding="0px" cellspacing="0px">
+                    <tr class="title_table">
+                        <th width="4%">STT</th>
+                        <th width="17%">Từ ngày - đến ngày</th>
+                        <th width="74%">Chức danh, chức vụ, đơn vị công tác ...</th>
+                        <th width="5%">Sửa</th>
+                    </tr>
+                    <!-- BEGIN: show_table -->
+                    <tr>
+                        <td>{t}</td>
+                        <td>{date_tu_t} - {date_den_t}</td>
+                        <td>{tomtat_t}</td>
+                        <td><a href="{portalurl}/admin.php?op=Add_DK_quatrinhcongtac&ccid={ccid}&pid={id_t}"><i class="fa fa-cogs"></i> Sửa</a></td>
+                    </tr>
+                    <!-- END: show_table -->
+
+                </table>
+                </div>
+
+</div>
+</div>
+</div>
+<iframe width=199 height=178 name="gToday:normal:agenda.js" id="gToday:normal:agenda.js"
+        src="{portalurl}/WeekPicker/ipopeng.htm" scrolling="no" frameborder="0"
+        style="visibility:visible; z-index:999; position:absolute; top:-500px; left:-500px;">
+    <iframe width=188 height=26 name="gToday:datetime:agenda.js:gfPop5:plugins_time.js"
+            id="gToday:datetime:agenda.js:gfPop5:plugins_time.js" src="{portalurl}/WeekPicker/datetime_ipopeng.htm"
+            scrolling="no" frameborder="0"
+            style="visibility:visible; z-index:999; position:absolute; left:-500px; top:0px;">picker4
+    </iframe>
+</iframe>
+        </div>
+
+<!-- END: MAIN -->

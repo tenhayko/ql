@@ -1,0 +1,93 @@
+<!-- BEGIN: MAIN -->
+
+<script type="text/javascript" src="{portalurl}/js/Ds_sanpham.js"></script>
+<script type="text/javascript" src="{portalurl}/js/accounting.js"></script>
+
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper">
+    <div class=" col_right">
+        <div class="url_top">
+            <a href="{portalurl}/admin"><strong>Trang chủ</strong> </a> <i class="fa fa-angle-double-right"></i> <strong>Test</strong>
+
+            <div style="float:right; padding-top:1px;"><img src="{portalurl}/images/arrow_left.gif" border="0"/><a
+                    href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
+        </div>
+        <div class=" data ">
+
+            <!--bat dau nhap form-->
+            
+<br />
+
+    <div class="row" style="width:99%; margin:auto">
+    <form action="" method="post" enctype="multipart/form-data" id="form1">
+    <input type="hidden" id="ngaunhien" value="{ngaunhien}" name="ngaunhien" />
+     <table width="100%" border="0" class="table table-striped table-bordered table-hover" id="table_1">
+      <thead>
+  <tr class="tr_head">
+    <th class="text-center">STT</th>
+    <th  class="text-center">Mã vạch</th>
+    <th  class="text-center">Số lượng</th>
+    <th  class="text-center">Đơn giá (VNĐ)</th>
+    <th  class="text-center">Thành tiền (VNĐ)</th>
+     <th  class="text-center"></th>
+  </tr>
+  </thead>
+  <tbody>
+	<tr><td colspan="6" id="danhsach"></td></tr>
+  <tr>
+    <td class="text-center" width="5%"></td>
+    <td class="text-center" width="30%">  <input type="text" placeholder="Mã vạch" class="form-control" id="name_sp_1" size="40" onchange="return laygiatri(1,this.value)"></td>
+    <td class="text-center"  width="10%"><input type="text" size="10" value="1" name="soluong_1" id="soluong_1"  class="form-control text-center"  onchange="return laysoluong(1,this.value)"/></td>
+    <td class="text-right" width="20%"> <span class="giasanpham_1"></span><input type="hidden" id="giasanpham_1" name="giasanpham_1" value="" /></td>
+    <td class="text-right"><span class="thanhtien_1"></span><input type="hidden" id="thanhtien_1" name="thanhtien_1" value="" /></td>
+     <td  class="text-center"  width="5%"></td>
+  </tr>
+ 
+ 
+  </tbody>
+   
+</table>
+      
+            <!-- Text input-->
+            
+			<!--<div class="col-md-12">
+            </div>-->
+            
+
+            
+
+			            
+
+	 <div class="form-group form-group-sm" style="margin-top:10px;">
+            <div class="text-center">
+                <input type="button" value="Thanh toán" class="btn-primary btn btn-sm" name="thanhtoan" onclick="$('#form1').submit();">
+            </div>
+            </div>
+        
+        <br>
+        <br>
+        
+</form>
+		
+    </div>
+    
+    
+   
+    <!-- /.row -->
+
+
+            <!--end form nhập-->
+            
+            
+
+
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<!-- BEGIN: MAIN -->

@@ -1,0 +1,96 @@
+<!-- BEGIN: MAIN -->
+
+
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper"
+     xmlns="http://www.w3.org/1999/html">
+    <div class=" col_right">
+        <div class="url_top">
+            <a href="{portalurl}/admin"><strong>Trang chủ</strong> <img src="{portalurl}/images/caret-r.gif"
+                                                                        border="0"/></a><strong>Nhận xét đánh giá</strong>
+
+            <div style="float:right; padding-top:1px;"><img src="{portalurl}/images/arrow_left.gif" border="0"/><a
+                    href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
+        </div>
+        <div style="margin-top: 10px" class=" col-xs-12 ">
+            <div><center><h4 style="font-weight: bold">NHẬN XÉT ĐÁNH GIÁ<h4></center></div>
+            <div class="col-xs-9">
+            <form action="" name="form1" id="form1" method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
+                <input type="hidden" value="{pid}" name="pid">
+                <input type="hidden" value="{ccid}" name="ccid">
+                <div>
+                    <!--<fieldset class="scheduler-border">-->
+                    <div col-xs-9>
+                    <table class="table">
+                        <tr>
+                            <td width="20%"><b>Nhận xét, đánh giá của cơ quan, đơn vị quản lý và sử dụng cán bộ, công chức</b>:</td>
+                            <td width="80%">
+                                <textarea style="height: 60px; width: 100%" name="nhanxet" class="w100">{nhanxet}</textarea>
+                            </td>
+                        </tr>
+                    </table>
+                    <center style="margin-top: 10px; margin-bottom: 15px"><input  name="Dk_nhanxet" type="submit" onClick="return ValidateForm()" class="btn btn-sm btn-primary" value="Hoàn thành" /> <input name="" type="reset" class="btn btn-sm btn-primary" value="Nhập lại" /></center>
+                    </div>
+
+                    <!--<div style="border-bottom:1px solid #ccc; margin: 13px 0px;"></div>-->
+                    <div class="clear"></div>
+
+                    <!--</fieldset>-->
+                </div>
+                <div class="clear"></div>
+
+
+            </form>
+            </div>
+            <!--_________________________________________-->
+
+
+            <div class="col-xs-3">
+
+                <div class="note nhanxet">
+                    <ul>
+                        {Fun_menu}
+                    </ul>
+                </div>
+
+
+                <div class="clear"></div>
+
+            </div>
+            <div class="clear"></div>
+            <!--_________________________________________-->
+<div>
+    <table border="1px"  class="show_daotao" bordercolor="#ccc" cellpadding="0px" cellspacing="0px">
+        <tr class="title_table">
+            <th width="5%">Ghi chú</th>
+            <th width="85%">Nhận xét, đánh giá của cơ quan, đơn vị quản lý và sử dụng cán bộ, công chức</th>
+            <th width="5%">Sửa</th>
+        </tr>
+        <!-- BEGIN: show_table -->
+        <tr>
+            <td>{t}</td>
+            <td>{nhanxet_t}</td>
+            <td><a href="{portalurl}/admin.php?op=Add_DK_nhanxet&ccid={ccid}&pid={id_t}"><i class="fa fa-cogs"></i> Sửa</a></td>
+        </tr>
+        <!-- END: show_table -->
+
+    </table>
+    </div>
+
+        </div>
+        <!--_________________________________________-->
+
+        <div class="clear"></div>
+</div>
+</div>
+
+<iframe width=199 height=178 name="gToday:normal:agenda.js" id="gToday:normal:agenda.js"
+        src="{portalurl}/WeekPicker/ipopeng.htm" scrolling="no" frameborder="0"
+        style="visibility:visible; z-index:999; position:absolute; top:-500px; left:-500px;">
+    <iframe width=188 height=26 name="gToday:datetime:agenda.js:gfPop5:plugins_time.js"
+            id="gToday:datetime:agenda.js:gfPop5:plugins_time.js" src="{portalurl}/WeekPicker/datetime_ipopeng.htm"
+            scrolling="no" frameborder="0"
+            style="visibility:visible; z-index:999; position:absolute; left:-500px; top:0px;">picker4
+    </iframe>
+</iframe>
+</div>
+<!-- END: MAIN -->

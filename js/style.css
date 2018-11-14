@@ -1,0 +1,29 @@
+/* 
+Credits: Bit Repository
+CSS Library: http://www.bitrepository.com/
+*/
+
+
+
+.object_ok
+{
+border: 1px solid green; 
+color: #333333; 
+}
+
+.object_error
+{
+border: 1px solid #CCCCCC;
+    border-radius: 4px 4px 4px 4px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+/* Input */
+input
+{
+border: 1px solid #CCCCCC;
+    border-radius: 4px 4px 4px 4px;
+    margin-bottom: 10px;
+    padding: 5px;
+}

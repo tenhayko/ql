@@ -1,0 +1,30 @@
+<!-- BEGIN: MAIN -->
+ <form action="" method="post" enctype="multipart/form-data">
+<table class="table-bordered table"  style="display:{hien_ketqua}; margin-top:20px;">
+				<tr>
+                	<td colspan="7" style="color:#00C; font-weight:bold; font-size:18px; text-align:center">{tieu_de}</td>
+                </tr>
+	          <tr>
+                    <th class="text-center">STT</th>
+                    <th class="text-center">Tên di sản</th>
+                    <th class="text-center">Huyện/Tp - Xã</th>
+                    <th class="text-center">Thuộc loại</th>
+                    <th class="text-center">Hiện trạng</th>
+                    <th class="text-center">Dân tộc</th>
+                </tr>
+                
+                
+                <!-- BEGIN: vatthe -->
+                <tr >
+                  <td align="center">{stt}</td>
+                  <td >{row_vatthe.name_pvt}</td>
+                  <td>{huyen_xa}</td>
+                  <td >{loai_ds}</td>
+                  <td >{hientrang}</td>
+                  <th >{dantoc}</th>
+                </tr>
+                <!-- END: vatthe -->
+            </table>
+           
+</form>
+<!-- END: MAIN -->

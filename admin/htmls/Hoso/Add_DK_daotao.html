@@ -1,0 +1,166 @@
+<!-- BEGIN: MAIN -->
+
+
+<div class="right_2" style="padding-right: 0px !important; padding-left: 5px !important;" id="page-content-wrapper"
+     xmlns="http://www.w3.org/1999/html">
+    <div class=" col_right">
+        <div class="url_top">
+            <a href="{portalurl}/admin"><strong>Trang chủ</strong> <img src="{portalurl}/images/caret-r.gif"
+                                                                        border="0"/></a><strong>Đào tạo, bồi dưỡng về
+            chuyên môn, nghiệp vụ, lý luận chính trị, ngoại ngữ, tin học</strong>
+
+            <div style="float:right; padding-top:1px;"><img src="{portalurl}/images/arrow_left.gif" border="0"/><a
+                    href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
+        </div>
+        <div style=" margin-top: 10px" class=" col-xs-12">
+            <div>
+                <center>
+                    <h5 style="font-weight: bold">DANH SÁCH ĐÀO TẠO, BỒI DƯỠNG VỀ CHUYÊN MÔN, NGHIỆP VỤ<h4>
+                </center>
+            </div>
+            <div class="col-xs-9">
+                <form action="" name="form1" id="form1" method="post" enctype="multipart/form-data"
+                      class="form-horizontal"
+                      role="form">
+                    <input type="hidden" value="{pid}" name="pid">
+                    <input type="hidden" value="{ccid}" name="ccid">
+
+                    <div>
+                        <!--<fieldset class="scheduler-border">-->
+
+                        <table class="table">
+                            <tr>
+                                <td><b>Tên trường</b>:</td>
+                                <td colspan="3"><input type="text" id="" value="{tentruong}" name="tentruong"
+                                                       class="w100">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Chuyên ngành đào tạo, bồi dưỡng</b>:</td>
+                                <td colspan="3"><input type="text" id="" value="{chuyennganh}" name="chuyennganh"
+                                                       class="w100"></td>
+
+                            </tr>
+                            <tr>
+                                <td width="20%"><b>Từ tháng, năm</b>:</td>
+                                <td width="20%">
+                                    <input type="text" class="w100" name="date_tu" value="{date_tu}" id="daotaotu"
+                                           style="width: 60%;float: left">
+                                    <a href="javascript:void(0)" style="display: block; width: 10%; float: left"
+                                       onclick="if(self.gfPop)gfPop.fPopCalendar(document.form1.daotaotu);return false;"
+                                       HIDEFOCUS><img name="popcal" align="absmiddle"
+                                                      src="{portalurl}/images/admin/calbtn.gif"
+                                                      width="34" height="22" border="0" alt=""></a>
+                                </td>
+                                <td width="13%"><b>Đến tháng, năm</b>:</td>
+                                <td width="20%">
+                                    <input type="text" class="w100" name="date_den" value="{date_den}" id="daotaoden"
+                                           style="width: 60%;float: left">
+                                    <a href="javascript:void(0)" style="display: block; width: 10%; float: left"
+                                       onclick="if(self.gfPop)gfPop.fPopCalendar(document.form1.daotaoden);return false;"
+                                       HIDEFOCUS><img name="popcal" align="absmiddle"
+                                                      src="{portalurl}/images/admin/calbtn.gif"
+                                                      width="34" height="22" border="0" alt=""></a>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td><b>Hình thức đào tạo</b>:</td>
+                                <td>
+                                    <select name="hinhthuc" style="width: 71%">
+                                        <!-- BEGIN: hinhthucdaotao -->
+                                        <option value="{row.name}"
+                                        {selected}>{row.name}</option>
+                                        <!-- END: hinhthucdaotao -->
+                                    </select>
+                                </td>
+                                <td><b>Văn bằng chứng chỉ</b>:</td>
+                                <td><select name="vanbang" style="width: 71%">
+                                    <!-- BEGIN: vanbang_dt -->
+                                    <option value="{row.name}"
+                                    {selected}>{row.name}</option>
+                                    <!-- END: vanbang_dt -->
+                                </select></td>
+
+                            </tr>
+                        </table>
+                        <center style="margin-top: 10px; margin-bottom: 15px;"><input name="Dk_daotao" type="submit"
+                                                                                      onClick="return ValidateForm()"
+                                                                                      class="btn btn-sm btn-primary"
+                                                                                      value="Hoàn thành"/> <input
+                                name=""
+                                type="reset"
+                                class="btn btn-sm btn-primary"
+                                value="Nhập lại"/>
+                        </center>
+
+
+                        <!--</fieldset>-->
+
+                    </div>
+
+
+                </form>
+            </div>
+            <!--_________________________________________-->
+
+
+            <div class="col-xs-3">
+
+                <div class="note">
+                    <ul>
+                        {Fun_menu}
+                    </ul>
+                </div>
+
+
+                <div class="clear"></div>
+
+            </div>
+            <div class="clear"></div>
+            <!--_________________________________________-->
+            <div>
+                <table border="1px" class="show_daotao" bordercolor="#ccc" cellpadding="0px" cellspacing="0px">
+                    <tr class="title_table">
+                        <th width="4%">STT</th>
+                        <th width="22%">Tên trường</th>
+                        <th width="25%">Chuyên ngành đào tạo</th>
+                        <th width="20%">Từ ngày - đến ngày</th>
+                        <th width="10%">Đào tạo</th>
+                        <th width="14%">Văn bằng, chứng chỉ</th>
+                        <th width="5%">Sửa</th>
+                    </tr>
+
+                    <!-- BEGIN: show_table -->
+                    <tr>
+                        <td>{t}</td>
+                        <td>{tentruong_t}</td>
+                        <td>{chuyennganh_t}</td>
+                        <td>{date_tu_t} - {date_den_t}</td>
+                        <td>{hinhthuc_t}</td>
+                        <td>{vanbang_t}</td>
+                        <td><a href="{portalurl}/admin.php?op=Add_DK_daotao&ccid={ccid}&pid={id_t}"><i class="fa fa-cogs"></i> Sửa</a></td>
+                    </tr>
+                    <!-- END: show_table -->
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+</div>
+</div>
+
+<iframe width=199 height=178 name="gToday:normal:agenda.js" id="gToday:normal:agenda.js"
+        src="{portalurl}/WeekPicker/ipopeng.htm" scrolling="no" frameborder="0"
+        style="visibility:visible; z-index:999; position:absolute; top:-500px; left:-500px;">
+    <iframe width=188 height=26 name="gToday:datetime:agenda.js:gfPop5:plugins_time.js"
+            id="gToday:datetime:agenda.js:gfPop5:plugins_time.js" src="{portalurl}/WeekPicker/datetime_ipopeng.htm"
+            scrolling="no" frameborder="0"
+            style="visibility:visible; z-index:999; position:absolute; left:-500px; top:0px;">picker4
+    </iframe>
+</iframe>
+
+
+<!-- END: MAIN -->
