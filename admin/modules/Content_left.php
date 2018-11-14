@@ -185,7 +185,7 @@ where b.aid='" . $aid . "' ");
 			?>
 			<ul class="dropdown">
 				<li style="background:#c6f5ff">
-					<a class="" href="#">&nbsp;&nbsp;<i class="fa fa-keyboard-o"></i>&nbsp;&nbsp;&nbsp; QUẢN LÝ NGƯỜI DÙNG
+					<a class="" href="#">&nbsp;&nbsp;<i class="fa fa-keyboard-o"></i>&nbsp;&nbsp;&nbsp; QUẢN TRỊ HỆ THỐNG
 					</a>
                 </li>
                 <ul>

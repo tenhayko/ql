@@ -33,12 +33,7 @@ echo '
 					
 			
                     <li><a  target="_blank" href="http://hungha.gov.vn/">Cổng thông tin</a></li>
-					
-					<li><a  target="_blank" href="#">Hướng dẫn sử dụng</a></li>
-					
-					<li><a  target="_blank" href="http://qts.vn">Liên hệ - Hỗ trợ</a></li>
-					 
-                    <li>
+                    <li class="right_drop">
                      <div class="dropdown user-dropdown">
                         <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
                         <i class="fa fa-user"></i>
@@ -58,6 +53,12 @@ echo '
 ';
 ?>
 <style>
+    .right_drop{
+        float: right !important;
+    }
+    .right_drop .dropdown-menu{
+        left: -150px;
+    }
     .user-dropdown button{
         background: none;
         border: none;
