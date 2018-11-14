@@ -1492,7 +1492,7 @@ function select_huyen($huyen) {
 	global $prefix,$db;
 	
 		$xa .='
-		<select class="form-control" name="huyen" onChange="getState(this.value)" id="huyen"><option value="">Lựa chọn</option>';
+		<select class="form-control" name="huyen" onChange="get_xa(this.value)" id="huyen"><option value="">Lựa chọn</option>';
 		
 		
                                         

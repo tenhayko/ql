@@ -202,6 +202,7 @@ function Add_vatthe_hungha($pid)
 		$xa_editSelected=Select_xaSelected($row['huyen'],$row['xa']);
 		$xtpl->assign("xa_editSelected", $xa_editSelected);
 		$xtpl->assign("row", $row);
+		$xtpl->assign("huyen_id", $row['huyen']);
 		$result_filedk = $db->sql_query("SELECT * from " . $prefix . "_vatthe_dinhkem
 									 where id_vatthe='" . intval($row['id']) . "' order by id ");
         while($row_dk = $db->sql_fetchrow($result_filedk)){
