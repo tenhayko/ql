@@ -43,7 +43,7 @@ where b.aid='" . $aid . "' ");
 
 
             <div class="">
-                <div class="admin_box">
+                <!--<div class="admin_box">
                     <div class="admin_avatar">
                         <div style="padding: 10px">
                             <img src="'.$portalurl.'/admin/img/avatar.png" alt=""/>
@@ -87,7 +87,7 @@ where b.aid='" . $aid . "' ");
                         </div>
                     </div>
                     <div class="clear"></div>
-                </div>
+                </div>-->
 				
 				
 				
