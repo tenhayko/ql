@@ -9,44 +9,43 @@
   <div class=" col_right">
     <div class="url_top"> <a href="{portalurl}/admin"><strong>Trang chủ</strong> </a> <i class="fa fa-angle-double-right"></i> <strong>Danh sách thôn</strong>
       <div style="float:right; padding-top:1px;">
-       <a href="{portalurl}/admin.php?op=Add_xathon" class="btn btn-primary btn-sm">
-Thêm thôn
-</a>
       <img src="{portalurl}/images/arrow_left.gif" border="0"/><a
-                    href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
+      href="javascript:window.history.back();"> Trở lại&nbsp; </a></div>
     </div>
     <div class=" data "> 
-      
+
       <!--bat dau nhap form--> 
       
       <br />
       <script>
-  $(function() {
-    $( "#tenditich" ).autocomplete({
-      source: 'search.php'
-    });
-  });
-  </script>
+        $(function() {
+          $( "#tenditich" ).autocomplete({
+            source: 'search.php'
+          });
+        });
+      </script>
       <div class="row" style="width:99%; margin:auto">
         <form action="" class="form-horizontal" role="form">
-          
+
           <!-- Text input-->
           
-          <div class="form-group form-group-sm ">
+          <div class="form-group form-group-sm col-md-8">
             <label class="col-sm-2" for="textinput">Xã/Phường</label>
             <div class="col-sm-4">
               <select class="input_text" id="id_xa" onchange="timkiem(1,50)">
                 <option value="">Lựa chọn</option>
-                
-    
-   {select_xathon}
-    
+                {select_xathon}
               </select>
             </div>
             <label class="col-sm-2" for="textinput">Thôn</label>
             <div class="col-sm-4">
               <input type="text"  placeholder="Tên thôn" class="form-control" id="name" onkeyup="timkiem(1,50)">
             </div>
+          </div>
+          <div class="col-md-2">
+            <a href="{portalurl}/admin.php?op=Add_xathon" class="btn btn-primary btn-sm">
+              Thêm thôn
+            </a>
           </div>
           
         </form>
@@ -67,21 +66,21 @@ Thêm thôn
 </div>
 </div>
 <script type="text/javascript">
-    $(".btn-toggle-search").click(function(){
-        if($(this).find("i.fa").hasClass("fa-plus-square-o")){
-            $(this).find("i.fa").removeClass("fa-plus-square-o").addClass("fa-minus-square-o");
-        }
-        else{
-            $(this).find("i.fa").removeClass("fa-minus-square-o").addClass("fa-plus-square-o");
-        }
-        if($(this).find("span").html()=="Tìm kiếm mở rộng"){
-            $(this).find("span").html("Tắt tìm kiếm mở rộng");
-        }
-        else{
-            $(this).find("span").html("Tìm kiếm mở rộng");
-        }
-        $(".advance-search").slideToggle();
-    });
+  $(".btn-toggle-search").click(function(){
+    if($(this).find("i.fa").hasClass("fa-plus-square-o")){
+      $(this).find("i.fa").removeClass("fa-plus-square-o").addClass("fa-minus-square-o");
+    }
+    else{
+      $(this).find("i.fa").removeClass("fa-minus-square-o").addClass("fa-plus-square-o");
+    }
+    if($(this).find("span").html()=="Tìm kiếm mở rộng"){
+      $(this).find("span").html("Tắt tìm kiếm mở rộng");
+    }
+    else{
+      $(this).find("span").html("Tìm kiếm mở rộng");
+    }
+    $(".advance-search").slideToggle();
+  });
 </script> 
 
 <!-- BEGIN: MAIN -->
