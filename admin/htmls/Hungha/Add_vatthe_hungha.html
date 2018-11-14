@@ -153,6 +153,18 @@
                             </div>
                             
                             <div class="form-group form-group-sm">
+                                <label class="col-sm-2 control-label" for="textinput">Thôn </label>
+                                <input type="hidden" value="{row.thon}" name="thon_edit" id="thon_edit" placeholder="Thôn" class="form-control">
+                                <input type="hidden" value="{row.xa}" name="xa_edit" id="xa_edit" placeholder="Thôn" class="form-control">
+                                <div class="col-sm-4" id="div_thon">
+                                    <select name="" class="form-control" id="thon">
+                                        <option value="">Lựa chọn</option> 
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="form-group form-group-sm">
                                 <label class="col-sm-2 control-label" for="textinput">Đối tượng thờ tự </label>
                                 <div class="col-sm-4">
                                 
@@ -163,18 +175,7 @@
                                     
                                     
                                 </div>
-                            </div>
-                            
-                            
-                            <div class="form-group form-group-sm">
-                                <label class="col-sm-2 control-label" for="textinput">Thôn </label>
-                                <input type="hidden" value="{row.thon}" name="thon_edit" id="thon_edit" placeholder="Thôn" class="form-control">
-                                <input type="hidden" value="{row.xa}" name="xa_edit" id="xa_edit" placeholder="Thôn" class="form-control">
-                                <div class="col-sm-10" id="div_thon">
-                                    <select name="" class="form-control" id="thon">
-                                        <option value="">Lựa chọn</option> 
-                                    </select>
-                                </div>
+                                
                             </div>
                             <div class="form-group form-group-sm">
                                 <span style="display:{hien_dk}">
