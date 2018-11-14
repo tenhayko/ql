@@ -15,14 +15,34 @@
             <!--bat dau nhap form-->
             
     <div class="row" style="width:96%; margin-top:20px">
-        <div class="col-md-12 ">
+        <div class="col-md-12">
          <form id="form1" name="form1" method="post" action="">
                     <div  style="width:80%;margin-left:5%;">
 
-           
+            
             <input type="hidden"  value="1" id="dulieu"/>
 
-             <div>
+            <div class="form-group form-group-sm " style="margin-top:20px;">
+                <div>
+                    <label class="col-sm-2 control-label" for="textinput">Loại báo cáo</label>
+    
+                    <div class="col-sm-6">
+                        <select class="form-control" name="" id="tab-data">
+                            <option value="">-Chọn-</option>
+                            <option value="tenditich">Báo cáo theo tên</option>
+                            <option value="niendai">Báo cáo theo niên đại</option>
+                            <option value="tomtat">Báo cáo theo tóm tắt lịch sử</option>
+                            <option value="thoigian">Báo cáo theo thời gian lễ hội</option>
+                            <option value="dientich">Báo cáo theo diện tích đất - diện tích đất xây dựng</option>
+                            <option value="huyenxa">Báo cáo theo Huyện - Xã</option>
+                            <option value="loaids">Báo cáo theo loại di sản</option>
+                            <option value="tinhtrang">Báo cáo theo tình trạng</option>
+                        </select>  
+                    </div>
+                </div>
+            </div>
+            <div class="row"></div>
+             <!-- <div>
                <input type="radio" name="optionsRadios" id="radio_tenditich" data-tab="tenditich" value="8" />
                 <label for="radio">Báo cáo theo tên</label>
              </div>
@@ -55,8 +75,8 @@
              <div>
               <input type="radio" name="optionsRadios" id="radio_tinhtrang" data-tab="tinhtrang" value="7" />
                 <label for="radio">Báo cáo theo tình trạng</label>
-             </div>
-             <div class="form-group form-group-sm " style="margin-top:20px;">
+             </div> -->
+             <div id="tab-div" class="form-group form-group-sm " style="margin-top:20px;">
              <div id="bc_tenditich" data-tab="tenditich" class="tab-pn">
                     <label class="col-sm-2 control-label" for="textinput">Tên di tích</label>
     
@@ -185,6 +205,22 @@ function popitup(url) {
     if (window.focus) {newwindow.focus()}
     return false;
 }
+$('#tab-data').change(function(event) {
+    /* Act on the event */
+    var dataTap = $(this).val();
+    if (dataTap !='') {
+        $('.frm-search').css('display', 'block');
+    }else{
+        $('.frm-search').css('display', 'none');
+    }
+    $('#tab-div').children('div').each(function(index, el) {
+        if ($(this).attr('data-tab') == dataTap) {
+            $(this).css('display', 'block');
+        }else{
+            $(this).css('display', 'none');
+        }
+    });
+});
 
 </script>
 
