@@ -243,8 +243,8 @@ while ($row = $db->sql_fetchrow($ds_loai)) {
             </div>
         </div>';
 ?>
-<script src="<?=$portalurl?>/js/jquery-1.9.1.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<!-- <script src="<?=$portalurl?>/js/jquery-1.9.1.js"></script> -->
+<!-- <script src="js/bootstrap.min.js"></script> -->
 
 
 <script>

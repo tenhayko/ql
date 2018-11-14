@@ -36,10 +36,19 @@ echo '
 					
 					<li><a  target="_blank" href="#">Hướng dẫn sử dụng</a></li>
 					
-					 <li><a  target="_blank" href="http://qts.vn">Liên hệ - Hỗ trợ</a></li>
+					<li><a  target="_blank" href="http://qts.vn">Liên hệ - Hỗ trợ</a></li>
 					 
-					 
-                    <li><a href="'.$portalurl.'/admin.php?op=logout">Thoát</a></li>
+                    <li>
+                     <div class="dropdown user-dropdown">
+                        <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                        <i class="fa fa-user"></i>
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Đổi mật khẩu</a></li>
+                          <li><a href="'.$portalurl.'/admin.php?op=logout">Thoát</a></li>
+                        </ul>
+                      </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -48,3 +57,22 @@ echo '
 
 ';
 ?>
+<style>
+    .user-dropdown button{
+        background: none;
+        border: none;
+        padding: 3px;
+        color: #fff;
+    }
+    .user-dropdown .dropdown-menu{
+        background: #d28b22;
+    }
+    .user-dropdown .dropdown-menu:hover{
+        background: #d28b22 !important;
+    }
+    .user-dropdown  .dropdown-menu>li>a:hover,.user-dropdown .dropdown-menu>li>a:focus{
+        color: #000;
+        text-decoration: none;
+        background-color: #d28b22;
+    }
+</style>
