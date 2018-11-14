@@ -126,10 +126,23 @@ where b.aid='" . $aid . "' ");
 									echo '<li style="border-top:1px solid #ccc; border-bottom:1px solid #ccc;"><i class="fa fa-caret-right"></i><a href="'.$portalurl.'/admin.php?op=Add_vatthe_hungha" title="Thêm thông tin di sản"> Cập nhật thông tin di sản</a></li>';
 								}
 								$res_submenu = mysql_query("Select fid ,title_".$currentlang.",url  from $prefix"._modules_functions." where mid  = '$mid' order by sort_order ");
-					while(list($fid ,$subadminmenu,$url)=mysql_fetch_row($res_submenu)){
-						
-									echo '<li><i class="fa fa-caret-right"></i><a  href="'.$portalurl.'/'.$url.'" title="'.$subadminmenu.'"> '.$subadminmenu.' </a></li>';
+								while(list($fid ,$subadminmenu,$url)=mysql_fetch_row($res_submenu)){
+									if ($url=='admin.php?op=Xephang_ditich') {
+										?>
+											<li class="menu-parent" >
+												<i class="fa fa-caret-right"></i> <a href="#" onclick="sildeTog(this,event)"><?=$subadminmenu?></a>
+												<ul class="sub-menu">
+													<li><i class="fa fa-caret-right"></i><a href="<?= $portalurl?>/admin.php?op=Ds_Xephang_ditich&pid=148">Quốc gia đặc biệt</a></li>
+													<li><i class="fa fa-caret-right"></i><a href="<?= $portalurl?>/admin.php?op=Ds_Xephang_ditich&pid=149">Tỉnh</a></li>
+													<li><i class="fa fa-caret-right"></i><a href="<?= $portalurl?>/admin.php?op=Ds_Xephang_ditich&pid=150">Quốc Gia</a></li>
+													<li><i class="fa fa-caret-right"></i><a href="<?= $portalurl?>/admin.php?op=Ds_Xephang_ditich&pid=151">Chưa xếp hạng</a></li>
+												</ul>
+											</li>
+										<?php
+									}else{
+										echo '<li><i class="fa fa-caret-right"></i><a  href="'.$portalurl.'/'.$url.'" title="'.$subadminmenu.'"> '.$subadminmenu.' </a></li>';
 									}
+								}
 								echo '</ul
                             </li>';
 							
@@ -246,7 +259,11 @@ while ($row = $db->sql_fetchrow($ds_loai)) {
 <!-- <script src="<?=$portalurl?>/js/jquery-1.9.1.js"></script> -->
 <!-- <script src="js/bootstrap.min.js"></script> -->
 
-
+<style>
+	.menu-parent .sub-menu{
+		display: none;
+	}
+</style>
 <script>
 		$(function() {
 			// Clickable Dropdown
@@ -283,6 +300,12 @@ while ($row = $db->sql_fetchrow($ds_loai)) {
 				}
 			});
 		});
+		function sildeTog(that,e)
+		{
+			$(that).parent('li').children('ul.sub-menu').slideToggle();
+			e.preventDefault();
+    		return false;
+		}
 </script>
 <!--_______________________________________-->
 
